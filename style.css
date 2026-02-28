@@ -1,0 +1,433 @@
+/* ================== BODY ================== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: url('images/system3.jpg') no-repeat center center/cover;
+    background-attachment: fixed; /* parallax effect */
+}
+
+/* Optional overlay to make text readable */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    z-index: -1;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ================== NAVBAR ================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-toggle {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #28a745;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #222;
+    list-style: none;
+    padding: 10px 0;
+    min-width: 150px;
+    border-radius: 6px;
+}
+
+.dropdown-menu li {
+    padding: 8px 20px;
+}
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    color: #28a745;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* ================== HERO SECTION ================== */
+.hero {
+    background: linear-gradient(to right, rgba(40,167,69,0.7), rgba(33,136,56,0.7)),
+                url('images/hero-bg.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+.hero button {
+    background-color: white;
+    color: #28a745;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hero button:hover {
+    background-color: #e6e6e6;
+    color: #28a745;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.small-hero {
+    padding: 80px 20px;
+    border-radius: 0;
+}
+
+/* ================== CARDS ================== */
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-align: center;
+    width: 400px; /* bigger card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    object-fit: cover;
+    height: 250px; /* adjust as needed */
+}
+
+.card h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #666;
+}
+
+.card button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card button:hover {
+    background-color: #218838;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* ================== SERVICES SECTION ================== */
+.services-section {
+    padding: 80px 20px;
+    text-align: center;
+    /* Remove background-color */
+    /* background-color: #f9f9f9; */
+
+    /* Add your image */
+    background: url('images/system1.jpg') no-repeat center center/cover;
+    background-attachment: fixed; /* optional: parallax effect */
+    position: relative; /* needed if we add overlay */
+}
+
+/* Optional overlay to make text/cards readable */
+.services-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3); /* adjust opacity */
+    z-index: 0;
+}
+
+/* Cards appear above the overlay */
+.services-section .card {
+    position: relative;
+    z-index: 1;
+}
+
+
+.services-section .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.services-section .card {
+    width: 400px; /* bigger service card */
+    text-align: center;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.services-section .card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    object-fit: cover;
+    height: 250px;
+}
+
+.services-section .card h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.services-section .card p {
+    color: #666;
+}
+
+.services-section .card:hover {
+    transform: translateY(-10px);
+}
+
+/* ================== CONTACT FORM ================== */
+.contact-section {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.contact-note {
+    max-width: 600px;
+    margin: 0 auto 20px;
+    color: #555;
+    font-size: 18px;
+}
+
+.contact-info {
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.contact-info p {
+    margin: 8px 0;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(40,167,69,0.5);
+    outline: none;
+}
+
+.contact-form button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* ================== FOOTER ================== */
+.footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+.footer h2 {
+    margin-bottom: 10px;
+}
+
+.footer p {
+    margin-bottom: 20px;
+    color: #bbb;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 26px;
+    margin: 0 12px;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.3);
+    color: #28a745;
+    text-shadow: 0 0 10px #28a745;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 950px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        background-color: #222;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-section .container,
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .services-section .card,
+    .card {
+        width: 95%;
+    }
+}
+
+/* ================== BACK TO TOP BUTTON ================== */
+#backToTop {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: none;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+#backToTop:hover {
+    background-color: #218838;
+    transform: scale(1.1);
+}
