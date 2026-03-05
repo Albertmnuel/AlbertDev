@@ -2,7 +2,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background: url('system3.jpg') no-repeat center center/cover;
+    background: url('images/system3.jpg') no-repeat center center/cover;
     background-attachment: fixed; /* parallax effect */
 }
 
@@ -104,7 +104,7 @@ html {
 /* ================== HERO SECTION ================== */
 .hero {
     background: linear-gradient(to right, rgba(40,167,69,0.7), rgba(33,136,56,0.7)),
-                url('hero-bg.jpg') no-repeat center center/cover;
+                url('images/hero-bg.jpg') no-repeat center center/cover;
     color: white;
     text-align: center;
     padding: 120px 20px;
@@ -212,7 +212,7 @@ html {
     /* background-color: #f9f9f9; */
 
     /* Add your image */
-    background: url('system1.jpg') no-repeat center center/cover;
+    background: url('images/system1.jpg') no-repeat center center/cover;
     background-attachment: fixed; /* optional: parallax effect */
     position: relative; /* needed if we add overlay */
 }
@@ -430,6 +430,95 @@ html {
 #backToTop:hover {
     background-color: #218838;
     transform: scale(1.1);
+}/* BACK BUTTON */
 
+.back-home{
+display:inline-block;
+margin:20px;
+text-decoration:none;
+font-weight:bold;
 }
 
+
+/* PROJECT GRID */
+
+.projects{
+padding:80px 10%;
+text-align:center;
+}
+
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+
+/* PROJECT CARD */
+
+.project-card{
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.project-card:hover{
+transform:translateY(-10px);
+}
+
+
+/* PROJECT IMAGE */
+
+.project-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+
+/* BUTTON AREA */
+
+.project-buttons{
+display:flex;
+justify-content:center;
+gap:10px;
+padding:15px;
+}
+
+
+/* DEMO BUTTON */
+
+.demo-btn{
+padding:8px 15px;
+text-decoration:none;
+border-radius:5px;
+font-weight:bold;
+}
+
+
+/* GITHUB BUTTON */
+
+.github-btn{
+padding:8px 15px;
+text-decoration:none;
+border-radius:5px;
+font-weight:bold;
+}/* GITHUB BUTTON */
+
+.github-btn{
+display:inline-block;
+margin-top:10px;
+padding:8px 15px;
+background:#222;
+color:white;
+text-decoration:none;
+border-radius:5px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.github-btn:hover{
+background:#444;
+}
