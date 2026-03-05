@@ -2,7 +2,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background: url('images/system3.jpg') no-repeat center center/cover;
+    background: url('system3.jpg') no-repeat center center/cover;
     background-attachment: fixed; /* parallax effect */
 }
 
@@ -212,7 +212,7 @@ html {
     /* background-color: #f9f9f9; */
 
     /* Add your image */
-    background: url('images/system1.jpg') no-repeat center center/cover;
+    background: url('system1.jpg') no-repeat center center/cover;
     background-attachment: fixed; /* optional: parallax effect */
     position: relative; /* needed if we add overlay */
 }
@@ -522,3 +522,4 @@ transition:0.3s;
 .github-btn:hover{
 background:#444;
 }
+
