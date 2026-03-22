@@ -1,1 +1,195 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlbertDev Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <h1 class="logo">AlbertDev</h1>
+    <div class="nav-toggle">&#9776;</div>
+    <ul class="nav-links">
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#cards-section">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO SECTION -->
+<section id="hero" class="hero">
+    <h1>Welcome to AlbertDev</h1>
+    <p>Building awesome websites one line of code at a time.</p>
+    <button onclick="scrollToCards()">Get Started</button>
+</section>
+
+<!-- SERVICES SECTION -->
+<section id="services" class="services-section">
+    <h2 style="text-align:center; margin-bottom:40px;">Our Services</h2>
+    <div class="container">
+        <div class="card">
+            <img src="images/system5.jpg" alt="Web Design">
+            <h2>Web Design</h2>
+            <p>We create modern, responsive, and beautiful websites that convert visitors into customers.</p>
+        </div>
+        <div class="card">
+            <img src="images/system6.jpg" alt="UI/UX Design">
+            <h2>UI/UX Design</h2>
+            <p>We design intuitive user interfaces and experiences to make your product easy and enjoyable to use.</p>
+        </div>
+        <div class="card">
+            <img src="images/system7.jpg" alt="SEO Optimization">
+            <h2>SEO Optimization</h2>
+            <p>We help your website rank higher in search engines so more people can find your business online.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PORTFOLIO CARDS -->
+  <a href="mywork.html">
+<div class="container" id="cards-section">
+    <div class="card">
+        <img src="images/Alby.jpg" alt="Project 1">
+        <h2>Albert Emmanuel</h2>
+        <p>Frontend Developer and backend web developer</p>
+        <button>Follow</button>
+    </div>
+</a>
+    <div class="card">
+        <img src="images/portfolio2.jpg" alt="Project 2">
+        <h2>Director Lero</h2>
+        <p>UI Designer</p>
+        <button>Follow</button>
+    </div>
+    <div class="card">
+        <img src="images/iremide.jpeg" alt="Project 3">
+        <h2>Iremide Mercy</h2>
+        <p>Backend Developer</p>
+        <button>Follow</button>
+    </div>
+</div>
+
+<!-- SERVICES SECTIONS -->
+<section id="web-design" class="services-section">
+    <div class="container">
+        <div class="card">
+            <img src="images/system1.jpg" alt="Web Design">
+            <h2>Web Design</h2>
+            <p>We create modern, responsive, and beautiful websites that convert visitors into customers.</p>
+              <p>
+                We specialize in crafting visually appealing, mobile-friendly websites that leave a lasting impression. 
+                Our designers collaborate closely with clients to create unique designs that reflect their brand's personality. 
+                From concept to launch, we handle everything: layout, graphics, typography, color schemes, and responsiveness. 
+                The result is a modern website that not only looks great but also performs seamlessly on all devices.
+            </p>
+            <button onclick="window.location.href='contact.html'">Get Started</button>
+        </div>
+    </div>
+</section>
+
+<section id="ui-ux" class="services-section">
+    <div class="container">
+        <div class="card">
+            <img src="images/system8.jpg" alt="UI/UX Design">
+            <h2>UI/UX Design</h2>
+            <p>We design intuitive user interfaces and experiences to make your product easy and enjoyable to use.</p>
+              <p>
+                Our UI/UX design service focuses on enhancing user satisfaction by improving usability, accessibility, 
+                and interaction. We combine research, user personas, wireframes, and prototypes to create intuitive designs. 
+                Every interface we build is designed to be easy to navigate, visually coherent, and engaging. 
+                The ultimate goal is to make your product enjoyable and efficient for users, boosting retention and conversions.
+            </p>
+            <button onclick="window.location.href='contact.html'">Get Started</button>
+        </div>
+    </div>
+</section>
+
+<section id="seo" class="services-section">
+    <div class="container">
+        <div class="card">
+            <img src="images/system9.jpg" alt="SEO">
+            <h2>SEO Optimization</h2>
+            <p>We help your website rank higher in search engines so more people can find your business online.</p>
+              <p>
+                SEO is essential for ensuring your website reaches the right audience. Our SEO experts analyze your 
+                website’s structure, content, and backlinks to maximize visibility. We implement strategies like 
+                keyword targeting, meta tags optimization, site speed improvement, and technical fixes. 
+                Our goal is to increase organic traffic, improve your search rankings, and ultimately help your business grow.
+            </p>
+            <button onclick="window.location.href='contact.html'">Get Started</button>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-content">
+        <h2>AlbertDev</h2>
+        <p>© 2026 AlbertDev. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+</footer>
+
+<!-- BACK TO TOP BUTTON -->
+<button id="backToTop" title="Go to top">↑</button>
+
+<!-- JAVASCRIPT -->
+<script>
+    // Mobile menu toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+
+    // Scroll to cards from hero button
+    function scrollToCards() {
+        const cards = document.getElementById('cards-section');
+        cards.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Back to Top button & Active navbar link
+    const backToTop = document.getElementById("backToTop");
+
+    window.onscroll = function() {
+        // Show/hide Back to Top
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            backToTop.style.display = "block";
+        } else {
+            backToTop.style.display = "none";
+        }
+
+        // Active navbar highlight
+        const sections = document.querySelectorAll("section, .container");
+        const navLinks = document.querySelectorAll(".nav-links a");
+        sections.forEach((sec) => {
+            const top = window.scrollY;
+            const offset = sec.offsetTop - 100;
+            const height = sec.offsetHeight;
+            if (top >= offset && top < offset + height) {
+                navLinks.forEach(link => link.classList.remove("active"));
+                const id = sec.getAttribute("id");
+                const activeLink = document.querySelector(`.nav-links a[href="#${id}"]`);
+                if(activeLink) activeLink.classList.add("active");
+            }
+        });
+    };
+
+    // Scroll to top when Back to Top clicked
+    backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+</script>
+
+</body>
+</html>
