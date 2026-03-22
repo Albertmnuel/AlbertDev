@@ -2,7 +2,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background: url('images/system3.jpg') no-repeat center center/cover;
+    background: url('system3.jpg') no-repeat center center/cover;
     background-attachment: fixed; /* parallax effect */
 }
 
