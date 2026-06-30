@@ -2,14 +2,14 @@
    THEME VARIABLES (The Screenshot Aesthetic)
    ========================================== */
 :root {
-    --bg-dark-obsidian: #08080C; /* Deepest black background */
-    --bg-card-slate: #12121A;    /* Card & Navbar background */
-    --bg-input: #1C1C28;         /* Input field blocks */
-    --accent-purple: #8B5CF6;    /* Glowing purple links & buttons */
-    --accent-glow: rgba(139, 92, 246, 0.2);
-    --text-primary: #F8FAFC;      /* Title colors */
-    --text-secondary: #94A3B8;    /* Subtitles / descriptions */
-    --border-subtle: #222235;     /* Sleek separation borders */
+    --bg-dark-obsidian: #030712; /* Deep midnight-slate background */
+    --bg-card-slate: #0F172A;    /* Dark electric blue/slate for cards */
+    --bg-input: #1E293B;         /* Input field background block */
+    --accent-purple: #3B82F6;    /* Bright electric blue matching the FTMO style */
+    --accent-glow: rgba(59, 130, 246, 0.25);
+    --text-primary: #F8FAFC;      /* White text headers */
+    --text-secondary: #94A3B8;    /* Soft slate blue body text */
+    --border-subtle: #1E293B;     /* Seamless card borders */
 }
 
 /* ================== BODY ================== */
