@@ -43,6 +43,17 @@ html {
     color: var(--text-primary);
     font-size: 24px;
     font-weight: bold;
+    display: flex;         /* Enables alignment side-by-side */
+    align-items: center;   /* Centers the image perfectly vertically with text */
+    gap: 10px;             /* Creates perfect spacing between your logo icon and text */
+}
+
+/* New styling rule for your logo image */
+.logo-icon {
+    height: 32px;          /* Restricts height to look elegant inside the bar */
+    width: auto;           /* Automatically keeps the correct aspect ratio */
+    object-fit: contain;
+    border-radius: 6px;    /* Optional: Softens corners slightly */
 }
 
 .logo span {
