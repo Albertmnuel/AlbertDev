@@ -574,3 +574,7 @@ html {
         max-width: 280px;
     }
 }
+/* Adds clean spacing between the About and Contact sections */
+#about-section {
+    margin-bottom: 60px; /* Adjust this number if you want more or less space */
+}
