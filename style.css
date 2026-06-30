@@ -29,20 +29,29 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(18, 18, 26, 0.8);
-    backdrop-filter: blur(12px); 
-    -webkit-backdrop-filter: blur(12px);
-    padding: 15px 40px;
+    padding: 20px 8%;
+    background-color: var(--bg-primary);
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid var(--border-subtle);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .logo {
-    color: var(--text-primary);
     font-size: 24px;
     font-weight: bold;
+    color: var(--text-primary);
+    display: flex;         /* Places image and text side-by-side */
+    align-items: center;   /* Aligns them perfectly on the center line */
+    gap: 12px;             /* Puts a clean gap between the image and text */
+}
+
+/* ADD THIS EXACT RULE TO SHRINK YOUR LOGO */
+.logo-icon {
+    height: 36px;          /* Restricts the height so it fits perfectly */
+    width: auto;           /* Keeps the hexagon from stretching or squeezing */
+    object-fit: contain;   
+    border-radius: 4px;    /* Smooths the corners slightly */
 }
 
 .logo span {
