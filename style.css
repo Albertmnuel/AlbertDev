@@ -16,7 +16,6 @@
 body {
     font-family: 'Plus Jakarta Sans', Arial, sans-serif;
     margin: 0;
-    /* FIX: Swapped heavy image background for a clean, fast CSS render */
     background-color: var(--bg-dark-obsidian);
     color: var(--text-secondary);
 }
@@ -31,7 +30,7 @@ html {
     justify-content: space-between;
     align-items: center;
     background-color: rgba(18, 18, 26, 0.8);
-    backdrop-filter: blur(12px); /* Trendy glass blur dynamic background */
+    backdrop-filter: blur(12px); 
     -webkit-backdrop-filter: blur(12px);
     padding: 15px 40px;
     position: sticky;
@@ -76,7 +75,7 @@ html {
     color: var(--accent-purple);
 }
 
-/* Dropdown styling preserved from your system */
+/* Dropdown styling */
 .dropdown {
     position: relative;
 }
@@ -112,30 +111,65 @@ html {
     display: block;
 }
 
-/* ================== HERO SECTION ================== */
+/* ================== REBUILT HERO SECTION ================== */
 .hero {
-    /* FIX: Replaced heavy background image with a lightweight CSS glow effect */
-    background: radial-gradient(circle at 50% 30%, rgba(139, 92, 246, 0.15) 0%, transparent 60%);
-    color: var(--text-primary);
-    text-align: center;
-    padding: 120px 20px;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    background: radial-gradient(circle at 20% 40%, rgba(59, 130, 246, 0.12) 0%, transparent 50%);
+    overflow: hidden;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
 }
 
-.hero h1 {
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hero-image-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-avatar {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    border-radius: 24px;
+    border: 2px solid var(--border-subtle);
+    box-shadow: 0 20px 40px rgba(3, 7, 18, 0.6), 0 0 30px rgba(59, 130, 246, 0.2);
+    object-fit: cover;
+}
+
+.hero-text-side {
+    flex: 1.2;
+    text-align: left;
+}
+
+.hero-text-side h1 {
     font-size: 48px;
     margin-bottom: 20px;
+    line-height: 1.2;
     color: var(--text-primary);
 }
 
-.hero p {
+.hero-text-side p {
     font-size: 20px;
     margin-bottom: 30px;
     color: var(--text-secondary);
 }
 
-.hero button {
+.hero button, .btn-primary {
     background-color: var(--accent-purple);
     color: var(--text-primary);
     border: none;
@@ -147,9 +181,10 @@ html {
     transition: all 0.3s ease;
 }
 
-.hero button:hover {
-    background-color: #7C3AED;
+.hero button:hover, .btn-primary:hover {
+    background-color: #2563EB; /* Darker vibrant blue instead of purple */
     box-shadow: 0 5px 25px var(--accent-glow);
+    transform: translateY(-2px);
 }
 
 .small-hero {
@@ -157,22 +192,28 @@ html {
     border-radius: 0;
 }
 
-/* ================== CARDS (CORE LAYOUT CHANGES) ================== */
+/* ================== LAYOUT STRUCTURE & CARDS ================== */
 .container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    padding: 50px 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/* Sleek Flexible Grid Layout */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
 }
 
 .card {
     background-color: var(--bg-card-slate);
     border: 1px solid var(--border-subtle);
-    padding: 24px;
+    padding: 30px 24px;
     border-radius: 16px;
     text-align: center;
-    width: 400px;
+    box-sizing: border-box;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s, box-shadow 0.3s;
 }
 
@@ -182,27 +223,30 @@ html {
     box-shadow: 0 12px 40px var(--accent-glow);
 }
 
-.card img {
+.card img, .card-img-wrapper img {
     width: 100%;
     border-radius: 10px;
     margin-bottom: 15px;
     object-fit: cover;
-    height: 250px;
+    height: 230px;
 }
 
 .card h2 {
     color: var(--text-primary);
-    margin-bottom: 10px;
+    font-size: 24px;
+    margin-bottom: 12px;
 }
 
 .card p {
     color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.6;
 }
 
-.card button {
-    background-color: var(--accent-purple);
+.card button, .btn-secondary {
+    background-color: transparent;
     color: var(--text-primary);
-    border: none;
+    border: 2px solid var(--accent-purple);
     padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
@@ -210,44 +254,74 @@ html {
     transition: all 0.3s ease;
 }
 
-.card button:hover {
-    background-color: #7C3AED;
+.card button:hover, .btn-secondary:hover {
+    background-color: var(--accent-purple);
     transform: scale(1.05);
 }
 
-/* ================== SERVICES SECTION ================== */
-.services-section {
-    padding: 80px 20px;
-    text-align: center;
-    /* FIX: Removed slow fixed background image file dependency */
-    background: var(--bg-dark-obsidian);
-    position: relative;
+.card-icon {
+    font-size: 40px;
+    color: var(--accent-purple);
+    margin-bottom: 15px;
 }
 
-.services-section .card {
+/* ================== DETAILED SERVICES DISPLAY FIXED ================== */
+.detailed-services {
+    padding: 60px 0;
+    background: var(--bg-dark-obsidian);
+}
+
+.detailed-services .container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.detailed-card {
     background-color: var(--bg-card-slate);
     border: 1px solid var(--border-subtle);
+    padding: 35px;
+    border-radius: 16px;
+    text-align: left;
+    transition: border-color 0.3s ease;
+}
+
+.detailed-card:hover {
+    border-color: var(--accent-purple);
+}
+
+.detailed-card h2 {
+    color: var(--text-primary);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.detailed-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* ================== SERVICES / PORTFOLIO UTILITIES ================== */
+.services-section, .portfolio-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 36px;
+    color: var(--text-primary);
+    margin-bottom: 40px;
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #3B82F6, #60A5FA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* ================== CONTACT FORM ================== */
-.contact-section {
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.contact-note {
-    max-width: 600px;
-    margin: 0 auto 20px;
-    color: var(--text-secondary);
-    font-size: 18px;
-}
-
-.contact-info {
-    margin-bottom: 30px;
-    font-size: 18px;
-    color: var(--text-primary);
-}
-
 .contact-form {
     max-width: 500px;
     margin: auto;
@@ -289,7 +363,7 @@ html {
 }
 
 .contact-form button:hover {
-    background-color: #7C3AED;
+    background-color: #2563EB;
     transform: scale(1.02);
 }
 
@@ -339,11 +413,10 @@ html {
 }
 
 #backToTop:hover {
-    background-color: #7C3AED;
+    background-color: #2563EB;
     transform: scale(1.1);
 }
 
-/* BACK HOME UTILITY BUTTON */
 .back-home {
     display: inline-block;
     margin: 20px;
@@ -406,7 +479,7 @@ html {
 }
 
 .demo-btn:hover {
-    background: #7C3AED;
+    background: #2563EB;
 }
 
 .github-btn {
@@ -421,11 +494,6 @@ html {
 
 /* ================== RESPONSIVE MEDIA QUERIES ================== */
 @media (max-width: 950px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .nav-links {
         flex-direction: column;
         display: none;
@@ -449,14 +517,18 @@ html {
 }
 
 @media (max-width: 768px) {
-    .services-section .container,
-    .container {
+    .hero-container {
         flex-direction: column;
-        align-items: center;
+        text-align: center;
+        gap: 30px;
     }
-
-    .services-section .card,
-    .card {
-        width: 95%;
+    .hero-text-side {
+        text-align: center;
+    }
+    .hero-text-side h1 {
+        font-size: 36px;
+    }
+    .profile-avatar {
+        max-width: 280px;
     }
 }
