@@ -578,3 +578,27 @@ html {
 #about-section {
     margin-bottom: 60px; /* Adjust this number if you want more or less space */
 }
+/* ================== CUSTOM HERO BACKGROUND SCENE ================== */
+.hero {
+    /* Loads the dynamic tech circuit scene designed for dark mode */
+    background-image: url('https://image-generation-engine.netlify.app/api/tech-scene?theme=react-dark&bg_color=0F172A&color=3B82F6&style=minimal&pattern=circuits&opacity=0.3&v=1');
+    background-size: cover;          /* Pushes the pattern across the full section */
+    background-position: center;   /* Keeps the focus on the main content */
+    background-repeat: no-repeat;
+    background-attachment: fixed;  /* Adds a smooth parallax scrolling effect */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fades the pattern smoothly to match Mikco and Darwin styles */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;  /* Controls the height of the fade-out effect */
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0) 0%, #0F172A 100%);
+    pointer-events: none;
+    z-index: 1;  /* Keeps the dynamic content interactive */
+}
