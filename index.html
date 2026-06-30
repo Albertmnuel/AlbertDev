@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AlbertDev Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar">
-    <h1 class="logo">AlbertDev</h1>
+    <h1 class="logo">Albert<span>Dev</span></h1>
     <div class="nav-toggle">&#9776;</div>
     <ul class="nav-links">
         <li><a href="#hero" class="active">Home</a></li>
@@ -22,127 +24,96 @@
     </ul>
 </nav>
 
-<!-- HERO SECTION -->
 <section id="hero" class="hero">
-    <h1>Welcome to AlbertDev</h1>
-    <p>Building awesome websites one line of code at a time.</p>
-    <button onclick="scrollToCards()">Get Started</button>
+    <div class="hero-content">
+        <h1>Welcome to <span class="text-gradient">AlbertDev</span></h1>
+        <p>Building high-performance web experiences one elegant line of code at a time.</p>
+        <button class="btn-primary" onclick="scrollToCards()">Get Started <i class="fas fa-arrow-right"></i></button>
+    </div>
 </section>
 
-<!-- SERVICES SECTION -->
 <section id="services" class="services-section">
-    <h2 style="text-align:center; margin-bottom:40px;">Our Services</h2>
-    <div class="container">
-        <div class="card">
-            <img src="system5.jpg" alt="Web Design">
+    <h2 class="section-title">Our Services</h2>
+    <div class="container grid-3">
+        <div class="card service-card">
+            <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
             <h2>Web Design</h2>
             <p>We create modern, responsive, and beautiful websites that convert visitors into customers.</p>
         </div>
-        <div class="card">
-            <img src="system6.jpg" alt="UI/UX Design">
+        <div class="card service-card">
+            <div class="card-icon"><i class="fas fa-palette"></i></div>
             <h2>UI/UX Design</h2>
             <p>We design intuitive user interfaces and experiences to make your product easy and enjoyable to use.</p>
         </div>
-        <div class="card">
-            <img src="system7.jpg" alt="SEO Optimization">
+        <div class="card service-card">
+            <div class="card-icon"><i class="fas fa-search-dollar"></i></div>
             <h2>SEO Optimization</h2>
             <p>We help your website rank higher in search engines so more people can find your business online.</p>
         </div>
     </div>
 </section>
 
-<!-- PORTFOLIO CARDS -->
+<section id="cards-section" class="portfolio-section">
+    <h2 class="section-title">Featured Work</h2>
+    <div class="container grid-3">
 
-        <!-- PORTFOLIO CARDS -->
-<section id="cards-section">
-    <div class="container">
-
-           <div class="card">
-            <img src="Alby.jpg" alt="Project Image">
+        <div class="card portfolio-card profile-card">
+            <div class="card-img-wrapper">
+                <img src="Alby.jpg" alt="Albert Emmanuel" loading="lazy">
+            </div>
             <h2>Albert Emmanuel</h2>
-            <p>Frontend and Backend web developer.</p>
-          <button onclick="window.location.href='mywork.html'">
-    Follow
-</button>
-        </div>
-     
-
-        <div class="card">
-            <img src="grand.jpg" alt="Project Image">
-            <h2>Music Instrument Website</h2>
-            <p>A responsive website showcasing musical instruments and services.</p>
-            <button onclick="window.open('https://musotrax.netlify.app/')">
-                Live Demo
-            </button>
+            <p class="subtitle">Frontend & Backend Developer</p>
+            <button class="btn-secondary" onclick="window.location.href='mywork.html'">Follow</button>
         </div>
 
-        <div class="card">
-            <img src="skirt.jpg" alt="Project Image">
+        <div class="card portfolio-card">
+            <div class="card-img-wrapper">
+                <img src="grand.jpg" alt="Music Instrument Website" loading="lazy">
+            </div>
+            <h2>Music Instrument Hub</h2>
+            <p>A responsive application showcasing musical instruments and premium tuning services.</p>
+            <button class="btn-primary" onclick="window.open('https://musotrax.netlify.app/')">Live Demo <i class="fas fa-external-link-alt"></i></button>
+        </div>
+
+        <div class="card portfolio-card">
+            <div class="card-img-wrapper">
+                <img src="skirt.jpg" alt="Bright's Apparel" loading="lazy">
+            </div>
             <h2>Bright's Apparel</h2>
-            <p>At Bright’s Apparel, we bring you stylish and affordable fashion pieces designed to keep you looking elegant, confident, and unique.</p>
-            <button onclick="window.open('https://bight-s-apparel.vercel.app/')">
-                Live Demo
-            </button>
+            <p>E-commerce setup featuring elegant, confident fashion pieces engineered for fluid UI response.</p>
+            <button class="btn-primary" onclick="window.open('https://bight-s-apparel.vercel.app/')">Live Demo <i class="fas fa-external-link-alt"></i></button>
         </div>
 
     </div>
 </section>
-<!-- SERVICES SECTIONS -->
-<section id="web-design" class="services-section">
+
+<section class="detailed-services">
     <div class="container">
-        <div class="card">
-            <img src="system1.jpg" alt="Web Design">
-            <h2>Web Design</h2>
-            <p>We create modern, responsive, and beautiful websites that convert visitors into customers.</p>
-              <p>
-                We specialize in crafting visually appealing, mobile-friendly websites that leave a lasting impression. 
-                Our designers collaborate closely with clients to create unique designs that reflect their brand's personality. 
-                From concept to launch, we handle everything: layout, graphics, typography, color schemes, and responsiveness. 
-                The result is a modern website that not only looks great but also performs seamlessly on all devices.
-            </p>
-            <button onclick="window.location.href='contact.html'">Get Started</button>
+        
+        <div class="detailed-card">
+            <h2>Web Design Deep Dive</h2>
+            <p>We specialize in crafting visually appealing, mobile-friendly websites that leave a lasting impression. Our designers collaborate closely with clients to create unique designs that reflect their brand's personality.</p>
+            <button class="btn-secondary" onclick="window.location.href='contact.html'">Get Started</button>
         </div>
+
+        <div class="detailed-card">
+            <h2>UI/UX Design Systems</h2>
+            <p>Our UI/UX design service focuses on enhancing user satisfaction by improving usability, accessibility, and interaction. We combine research, user personas, wireframes, and prototypes to create intuitive layouts.</p>
+            <button class="btn-secondary" onclick="window.location.href='contact.html'">Get Started</button>
+        </div>
+
+        <div class="detailed-card">
+            <h2>Technical SEO Optimization</h2>
+            <p>SEO is essential for ensuring your website reaches the right audience. Our SEO experts analyze your website’s structure, content, and backlinks to implement keyword targeting, meta optimization, and core web vitals improvements.</p>
+            <button class="btn-secondary" onclick="window.location.href='contact.html'">Get Started</button>
+        </div>
+
     </div>
 </section>
 
-<section id="ui-ux" class="services-section">
-    <div class="container">
-        <div class="card">
-            <img src="system8.jpg" alt="UI/UX Design">
-            <h2>UI/UX Design</h2>
-            <p>We design intuitive user interfaces and experiences to make your product easy and enjoyable to use.</p>
-              <p>
-                Our UI/UX design service focuses on enhancing user satisfaction by improving usability, accessibility, 
-                and interaction. We combine research, user personas, wireframes, and prototypes to create intuitive designs. 
-                Every interface we build is designed to be easy to navigate, visually coherent, and engaging. 
-                The ultimate goal is to make your product enjoyable and efficient for users, boosting retention and conversions.
-            </p>
-            <button onclick="window.location.href='contact.html'">Get Started</button>
-        </div>
-    </div>
-</section>
-
-<section id="seo" class="services-section">
-    <div class="container">
-        <div class="card">
-            <img src="system9.jpg" alt="SEO">
-            <h2>SEO Optimization</h2>
-            <p>We help your website rank higher in search engines so more people can find your business online.</p>
-              <p>
-                SEO is essential for ensuring your website reaches the right audience. Our SEO experts analyze your 
-                website’s structure, content, and backlinks to maximize visibility. We implement strategies like 
-                keyword targeting, meta tags optimization, site speed improvement, and technical fixes. 
-                Our goal is to increase organic traffic, improve your search rankings, and ultimately help your business grow.
-            </p>
-            <button onclick="window.location.href='contact.html'">Get Started</button>
-        </div>
-    </div>
-</section>
-
-<!-- FOOTER -->
 <footer class="footer">
     <div class="footer-content">
-        <h2>AlbertDev</h2>
+        <h2>Albert<span class="text-purple">Dev</span></h2>
         <p>© 2026 AlbertDev. All rights reserved.</p>
         <div class="social-icons">
             <a href="#"><i class="fab fa-github"></i></a>
@@ -153,54 +124,29 @@
     </div>
 </footer>
 
-<!-- BACK TO TOP BUTTON -->
 <button id="backToTop" title="Go to top">↑</button>
 
-<!-- JAVASCRIPT -->
 <script>
-    // Mobile menu toggle
     const toggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
     toggle.addEventListener('click', () => navLinks.classList.toggle('active'));
 
-    // Scroll to cards from hero button
     function scrollToCards() {
-        const cards = document.getElementById('cards-section');
-        cards.scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('cards-section').scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Back to Top button & Active navbar link
     const backToTop = document.getElementById("backToTop");
-
     window.onscroll = function() {
-        // Show/hide Back to Top
         if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
             backToTop.style.display = "block";
         } else {
             backToTop.style.display = "none";
         }
-
-        // Active navbar highlight
-        const sections = document.querySelectorAll("section, .container");
-        const navLinks = document.querySelectorAll(".nav-links a");
-        sections.forEach((sec) => {
-            const top = window.scrollY;
-            const offset = sec.offsetTop - 100;
-            const height = sec.offsetHeight;
-            if (top >= offset && top < offset + height) {
-                navLinks.forEach(link => link.classList.remove("active"));
-                const id = sec.getAttribute("id");
-                const activeLink = document.querySelector(`.nav-links a[href="#${id}"]`);
-                if(activeLink) activeLink.classList.add("active");
-            }
-        });
     };
 
-    // Scroll to top when Back to Top clicked
     backToTop.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 </script>
-
 </body>
 </html>
