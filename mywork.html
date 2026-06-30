@@ -1,153 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>My Work | AlbertDev</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Work | AlbertDev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
 <body>
 
-<!-- BACK BUTTON -->
+    <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back Home</a>
 
-<a href="index.html" class="back-home">← Back Home</a>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>My <span class="text-gradient">Work</span></h1>
+            <p>
+                Hello, I'm Albert Emmanuel, a passionate frontend developer focused
+                on building responsive and visually engaging websites. My work
+                combines clean design with functional user experiences.
+            </p>
+        </div>
+    </section>
 
+    <section class="container">
+        <div class="grid-3">
 
-<!-- HERO SECTION -->
+            <div class="card project-card">
+                <img src="grand.jpg" alt="Music Instrument Website" loading="lazy">
+                <h2>Music Instrument Hub</h2>
+                <p>A responsive website showcasing musical instruments and elite tuning services.</p>
+                <div class="project-buttons">
+                    <button class="demo-btn" onclick="window.open('https://musotrax.netlify.app/')">Live Demo</button>
+                    <a href="https://github.com/Albertmnuel/music-instrument-website" target="_blank" class="github-btn"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
 
-<section class="hero">
+            <div class="card project-card">
+                <img src="Alby.jpg" alt="AlbertDev Portfolio" loading="lazy">
+                <h2>AlbertDev Portfolio</h2>
+                <p>A personal developer portfolio platform designed to showcase my digital engineering works.</p>
+                <div class="project-buttons">
+                    <button class="demo-btn" onclick="window.open('https://albertmnuel.github.io/AlbertDev/')">Live Demo</button>
+                    <a href="https://github.com/Albertmnuel/AlbertDev" target="_blank" class="github-btn"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
 
-<h1>My Work</h1>
+            <div class="card project-card">
+                <img src="images/project3.jpg" alt="Banking UI Concept" loading="lazy">
+                <h2>Banking UI Concept</h2>
+                <p>A modern online banking interface concept focused heavily on structural usability.</p>
+                <div class="project-buttons">
+                    <button class="demo-btn" onclick="window.open('https://your-live-demo-link.com')">Live Demo</button>
+                    <a href="https://github.com/Albertmnuel/banking-ui" target="_blank" class="github-btn"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
 
-<p>
-Hello, I'm Albert Emmanuel, a passionate frontend developer focused
-on building responsive and visually engaging websites. My work
-combines clean design with functional user experiences.
+            <div class="card project-card">
+                <img src="Mik.png" alt="Mik-Flourish Global" loading="lazy">
+                <h2>Mik-Flourish Global</h2>
+                <p>Supplies clean bottled water, juices, and assorted refreshing beverages directly to consumer doors.</p>
+                <div class="project-buttons">
+                    <button class="demo-btn" onclick="window.open('https://mik-flourish-water-and-drinks-depot.vercel.app')">Live Demo</button>
+                    <a href="https://albertmnuel.github.io/MIK-FLOURISH-WATER-AND-DRINKS-DEPOT/" target="_blank" class="github-btn"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
 
-Below are some of the projects I have created to improve my
-development skills and solve real-world problems.
-</p>
+            <div class="card project-card">
+                <img src="skirt.jpg" alt="Bright's Apparel" loading="lazy">
+                <h2>Bright's Apparel</h2>
+                <p>An e-commerce clothing environment bringing you stylish and affordable custom fashion pieces.</p>
+                <div class="project-buttons">
+                    <button class="demo-btn" onclick="window.open('https://bight-s-apparel.vercel.app/')">Live Demo</button>
+                    <a href="https://albertmnuel.github.io/Bight-s-Apparel/" target="_blank" class="github-btn"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
 
-</section>
+        </div>
+    </section>
 
-
-<!-- PROJECTS -->
-
-<section class="container">
-
-<div class="card">
-
-<img src="grand.jpg" alt="Project Image">
-
-<h2>Music Instrument Website</h2>
-
-<p>A responsive website showcasing musical instruments and services.</p>
-
-<button onclick="window.open('https://musotrax.netlify.app/')">
-    Live Demo
-</button>
-
-<a href="https://github.com/yourusername/music-instrument-website" 
-   target="_blank" 
-   class="github-btn">
-   GitHub
-</a>
-
-</div>
-
-
-<div class="card">
-
-<img src="Alby.jpg" alt="Project Image">
-
-<h2>AlbertDev Portfolio</h2>
-
-<p>A personal developer portfolio designed to showcase my work.</p>
-
-<button onclick="window.open('https://albertmnuel.github.io/AlbertDev/')">
-    Live Demo
-</button>
-
-<a href="https://albertmnuel.github.io/AlbertDev/" 
-   target="_blank" 
-   class="github-btn">
-   GitHub
-</a>
-
-</div>
-
-
-<div class="card">
-
-<img src="images/project3.jpg" alt="Project Image">
-
-<h2>Banking UI Concept</h2>
-
-<p>A modern banking interface concept focused on usability.</p>
-
-<button onclick="window.open('https://your-live-demo-link.com')">
-    Live Demo
-</button>
-
-<a href="https://github.com/yourusername/banking-ui" 
-   target="_blank" 
-   class="github-btn">
-   GitHub
-</a>
-
-</div>
-<div class="card">
-
-<img src="Mik.png" alt="Project Image">
-
-<h2>Mik-Flourish Global</h2>
-
-<p>Fresh • Trusted • Delivered Pure water & refreshing drinks — delivered fast MIK-FLOURISH supplies clean bottled water, juices and assorted beverages across town. Place orders online or on WhatsApp and we deliver to your door.</p>
-
-<button onclick="window.open('https://mik-flourish-water-and-drinks-depot.vercel.app')">
-    Live Demo
-</button>
-
-<a href="https://albertmnuel.github.io/MIK-FLOURISH-WATER-AND-DRINKS-DEPOT/" 
-   target="_blank" 
-   class="github-btn">
-   GitHub
-</a>
-
-</div>
-
-<div class="card">
-
-<img src="skirt.jpg" alt="Project Image">
-
-<h2>Bright's Apparel</h2>
-
-<p>At Bright’s Apparel, we bring you stylish and affordable fashion pieces designed to keep you looking elegant, confident, and unique.</p>
-
-<button onclick="window.open('https://bight-s-apparel.vercel.app/')">
-    Live Demo
-</button>
-
-<a href="https://albertmnuel.github.io/Bight-s-Apparel/" 
-   target="_blank" 
-   class="github-btn">
-   GitHub
-</a>
-
-</div>
-    
-</section>
-
-
-
-
-
-
-
-
+</body>
+</html>
