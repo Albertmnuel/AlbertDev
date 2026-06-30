@@ -75,7 +75,7 @@ html {
     color: var(--accent-purple);
 }
 
-/* ================== FLOATING DROPDOWN ANIMATION ================== */
+/* ================== MIKCO STYLE FLOATING DROPDOWN ================== */
 .dropdown {
     position: relative;
 }
@@ -86,62 +86,62 @@ html {
     transition: transform 0.3s ease;
 }
 
-/* Rebuilt dropdown menu as a floating glass panel */
+/* Consolidated dropdown menu using Mikco's slide-and-fade animation rules */
 .dropdown-menu {
-    display: block; /* Kept display block so opacity transitions work */
+    display: block; 
     position: absolute;
-    top: 130%; /* Pushes it down slightly below the link bar */
-    left: 50%;
-    transform: translateX(-50%) translateY(10px) scale(0.95); /* Hidden initial float position */
-    background-color: rgba(15, 23, 42, 0.9); /* Translucent dark slate */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-glow);
-    list-style: none;
-    padding: 10px 0;
-    min-width: 180px;
-    border-radius: 12px;
-    opacity: 0;
-    pointer-events: none; /* Disables interaction when hidden */
-    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Dropdown styling */
-.dropdown {
-    position: relative;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
+    top: 100%; 
     left: 0;
     background-color: var(--bg-card-slate);
     border: 1px solid var(--border-subtle);
     list-style: none;
     padding: 10px 0;
-    min-width: 150px;
-    border-radius: 6px;
+    min-width: 170px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 0 0 15px var(--accent-glow);
+    
+    /* Animation initial states (hidden, pulled slightly upward) */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px); 
+    
+    /* Transition curves matching the sleek corporate interface */
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
 }
 
 .dropdown-menu li {
-    padding: 8px 20px;
+    padding: 0;
 }
 
 .dropdown-menu li a {
     color: var(--text-secondary);
     text-decoration: none;
     display: block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
 }
 
+/* Dropdown interactive links hover */
 .dropdown-menu li a:hover {
-    color: var(--accent-purple);
+    color: var(--text-primary);
+    background-color: rgba(59, 130, 246, 0.1); 
+    padding-left: 24px; /* Micro-motion forward bounce */
 }
 
+/* Hovering over parent slides DOWN into view */
 .dropdown:hover .dropdown-menu {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); 
+}
+
+/* Rotates the caret smoothly */
+.dropdown:hover .dropdown-trigger i {
+    transform: rotate(180deg);
+    color: var(--accent-purple);
 }
 
 /* ================== REBUILT HERO SECTION ================== */
@@ -215,7 +215,7 @@ html {
 }
 
 .hero button:hover, .btn-primary:hover {
-    background-color: #2563EB; /* Darker vibrant blue instead of purple */
+    background-color: #2563EB; 
     box-shadow: 0 5px 25px var(--accent-glow);
     transform: translateY(-2px);
 }
@@ -388,180 +388,4 @@ html {
     color: var(--text-primary);
     border: none;
     padding: 12px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.contact-form button:hover {
-    background-color: #2563EB;
-    transform: scale(1.02);
-}
-
-/* ================== FOOTER ================== */
-.footer {
-    background-color: #050508;
-    border-top: 1px solid var(--border-subtle);
-    color: var(--text-primary);
-    text-align: center;
-    padding: 40px 20px;
-    margin-top: 50px;
-}
-
-.footer p {
-    color: var(--text-secondary);
-}
-
-.social-icons a {
-    text-decoration: none;
-    color: var(--text-secondary);
-    font-size: 26px;
-    margin: 0 12px;
-    display: inline-block;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.social-icons a:hover {
-    transform: scale(1.2);
-    color: var(--accent-purple);
-}
-
-/* ================== BACK TO TOP BUTTON ================== */
-#backToTop {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    display: none;
-    background-color: var(--accent-purple);
-    color: white;
-    border: none;
-    padding: 12px 18px;
-    border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    box-shadow: 0 4px 15px var(--accent-glow);
-    transition: all 0.3s ease;
-}
-
-#backToTop:hover {
-    background-color: #2563EB;
-    transform: scale(1.1);
-}
-
-.back-home {
-    display: inline-block;
-    margin: 20px;
-    text-decoration: none;
-    color: var(--accent-purple);
-    font-weight: bold;
-}
-
-/* ================== PROJECT GRID SECTION ================== */
-.projects {
-    padding: 80px 10%;
-    text-align: center;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.project-card {
-    background-color: var(--bg-card-slate);
-    border: 1px solid var(--border-subtle);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--accent-purple);
-    box-shadow: 0 12px 30px var(--accent-glow);
-}
-
-.project-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.project-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding: 15px;
-}
-
-.demo-btn, .github-btn {
-    padding: 8px 15px;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: 0.2s ease;
-}
-
-.demo-btn {
-    background: var(--accent-purple);
-    color: var(--text-primary);
-}
-
-.demo-btn:hover {
-    background: #2563EB;
-}
-
-.github-btn {
-    background: #1A1A26;
-    color: var(--text-primary);
-    border: 1px solid var(--border-subtle);
-}
-
-.github-btn:hover {
-    background: var(--border-subtle);
-}
-
-/* ================== RESPONSIVE MEDIA QUERIES ================== */
-@media (max-width: 950px) {
-    .nav-links {
-        flex-direction: column;
-        display: none;
-        width: 100%;
-        background-color: var(--bg-card-slate);
-        border-top: 1px solid var(--border-subtle);
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-toggle {
-        display: block;
-    }
-
-    .nav-links li {
-        text-align: center;
-        padding: 12px 0;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-    }
-    .hero-text-side {
-        text-align: center;
-    }
-    .hero-text-side h1 {
-        font-size: 36px;
-    }
-    .profile-avatar {
-        max-width: 280px;
-    }
-}
+    border-radius:
