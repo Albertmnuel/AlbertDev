@@ -14,22 +14,22 @@
 
 <nav class="navbar">
     <h1 class="logo">
-        <img src="Albertdev.jpg" alt="AlbertDev Logo" class="logo-icon"> Albert<span>Dev</span>
+        <img src="photo_2026-03-06_22-39-14.jpg" alt="AlbertDev Logo" class="logo-icon"> Albert<span>Dev</span>
     </h1>
     <div class="nav-toggle">&#9776;</div>
     <ul class="nav-links">
         <li><a href="#hero" class="active">Home</a></li>
-        <li><a href="#about-section">About</a></li>
+        <li><a href="about.html">About</a></li>
         <li class="dropdown">
-            <a href="#services-section" class="dropdown-trigger">Services <i class="fas fa-caret-down"></i></a>
+            <a href="#services" class="dropdown-trigger">Services <i class="fas fa-caret-down"></i></a>
             <ul class="dropdown-menu">
-                <li><a href="#services-section">Web Design</a></li>
-                <li><a href="#services-section">UI/UX Design</a></li>
-                <li><a href="#services-section">SEO Optimization</a></li>
+                <li><a href="contact.html">Web Design</a></li>
+                <li><a href="contact.html">UI/UX Design</a></li>
+                <li><a href="contact.html">SEO Optimization</a></li>
             </ul>
         </li>
         <li><a href="#cards-section">Portfolio</a></li>
-        <li><a href="#contact-section">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav>
 
@@ -43,7 +43,7 @@
         <div class="hero-text-side">
             <h1>Welcome to <span class="text-gradient">AlbertDev</span></h1>
             <p>Building high-performance web experiences one elegant line of code at a time.</p>
-            <button class="btn-primary" onclick="scrollToSection('cards-section')">Get Started <i class="fas fa-arrow-right"></i></button>
+            <button class="btn-primary" onclick="scrollToCards()">Get Started <i class="fas fa-arrow-right"></i></button>
         </div>
 
     </div>
@@ -83,25 +83,25 @@
     </div>
 </section>
 
-<section id="services-section" class="detailed-services">
+<section id="services" class="detailed-services">
     <div class="container grid-3">
         
         <div class="detailed-card">
             <h2>Web Design Deep Dive</h2>
             <p>We specialize in crafting visually appealing, mobile-friendly websites that leave a lasting impression. Our designers collaborate closely with clients to create unique designs that reflect their brand's personality.</p>
-            <button class="btn-secondary" onclick="scrollToSection('contact-section')">Get Started</button>
+            <button class="btn-secondary" onclick="window.location.href='contact.html'">Get Started</button>
         </div>
 
         <div class="detailed-card">
             <h2>UI/UX Design Systems</h2>
             <p>Our UI/UX design service focuses on enhancing user satisfaction by improving usability, accessibility, and interaction. We combine research, user personas, wireframes, and prototypes to create intuitive layouts.</p>
-            <button class="btn-secondary" onclick="scrollToSection('contact-section')">Get Started</button>
+            <button class="btn-secondary" onclick="window.location.href='contact.html'">Get Started</button>
         </div>
 
         <div class="detailed-card">
             <h2>Technical SEO Optimization</h2>
             <p>SEO is essential for ensuring your website reaches the right audience. Our SEO experts analyze your website’s structure, content, and backlinks to implement keyword targeting, meta optimization, and core web vitals improvements.</p>
-            <button class="btn-secondary" onclick="scrollToSection('contact-section')">Get Started</button>
+            <button class="btn-secondary" onclick="window.location.href='contact.html'">Get Started</button>
         </div>
 
     </div>
@@ -154,12 +154,8 @@
     const navLinks = document.querySelector('.nav-links');
     toggle.addEventListener('click', () => navLinks.classList.toggle('active'));
 
-    function scrollToSection(id) {
-        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-    }
-
     function scrollToCards() {
-        scrollToSection('cards-section');
+        document.getElementById('cards-section').scrollIntoView({ behavior: 'smooth' });
     }
 
     const backToTop = document.getElementById("backToTop");
