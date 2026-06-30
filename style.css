@@ -75,40 +75,71 @@ html {
     color: var(--accent-purple);
 }
 
-/* Dropdown styling */
+/* ================== FLOATING DROPDOWN ANIMATION ================== */
 .dropdown {
     position: relative;
 }
 
+.dropdown-trigger i {
+    font-size: 12px;
+    margin-left: 4px;
+    transition: transform 0.3s ease;
+}
+
+/* Rebuilt dropdown menu as a floating glass panel */
 .dropdown-menu {
-    display: none;
+    display: block; /* Kept display block so opacity transitions work */
     position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: var(--bg-card-slate);
-    border: 1px solid var(--border-subtle);
+    top: 130%; /* Pushes it down slightly below the link bar */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px) scale(0.95); /* Hidden initial float position */
+    background-color: rgba(15, 23, 42, 0.9); /* Translucent dark slate */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-glow);
     list-style: none;
     padding: 10px 0;
-    min-width: 150px;
-    border-radius: 6px;
+    min-width: 180px;
+    border-radius: 12px;
+    opacity: 0;
+    pointer-events: none; /* Disables interaction when hidden */
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dropdown-menu li {
-    padding: 8px 20px;
+    padding: 0;
 }
 
 .dropdown-menu li a {
     color: var(--text-secondary);
     text-decoration: none;
     display: block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
 }
 
+/* Hover effect on dropdown links */
 .dropdown-menu li a:hover {
-    color: var(--accent-purple);
+    color: var(--text-primary);
+    background-color: rgba(59, 130, 246, 0.15); /* Soft electric blue background tint */
+    padding-left: 24px; /* Tiny forward bounce motion */
 }
 
+/* Active floating hover state */
 .dropdown:hover .dropdown-menu {
-    display: block;
+    opacity: 1;
+    pointer-events: auto; /* Enables clicks when visible */
+    transform: translateX(-50%) translateY(0) scale(1); /* Floats up seamlessly to center position */
+}
+
+/* Rotates the tiny arrow helper when hovered */
+.dropdown:hover .dropdown-trigger i {
+    transform: rotate(180deg);
+    color: var(--accent-purple);
 }
 
 /* ================== REBUILT HERO SECTION ================== */
