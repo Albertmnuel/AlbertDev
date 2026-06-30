@@ -108,38 +108,40 @@ html {
                 transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Dropdown styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--bg-card-slate);
+    border: 1px solid var(--border-subtle);
+    list-style: none;
+    padding: 10px 0;
+    min-width: 150px;
+    border-radius: 6px;
+}
+
 .dropdown-menu li {
-    padding: 0;
+    padding: 8px 20px;
 }
 
 .dropdown-menu li a {
     color: var(--text-secondary);
     text-decoration: none;
     display: block;
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.2s ease;
 }
 
-/* Hover effect on dropdown links */
 .dropdown-menu li a:hover {
-    color: var(--text-primary);
-    background-color: rgba(59, 130, 246, 0.15); /* Soft electric blue background tint */
-    padding-left: 24px; /* Tiny forward bounce motion */
-}
-
-/* Active floating hover state */
-.dropdown:hover .dropdown-menu {
-    opacity: 1;
-    pointer-events: auto; /* Enables clicks when visible */
-    transform: translateX(-50%) translateY(0) scale(1); /* Floats up seamlessly to center position */
-}
-
-/* Rotates the tiny arrow helper when hovered */
-.dropdown:hover .dropdown-trigger i {
-    transform: rotate(180deg);
     color: var(--accent-purple);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
 }
 
 /* ================== REBUILT HERO SECTION ================== */
