@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Contact Us - AlbertDev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
-    <!-- NAVBAR -->
     <nav class="navbar">
-        <h1 class="logo">AlbertDev</h1>
+        <h1 class="logo">Albert<span>Dev</span></h1>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -19,58 +21,55 @@
         </ul>
     </nav>
 
-    <!-- HERO HEADER -->
     <section class="hero small-hero">
-        <h1>Contact Us</h1>
-        <p>Let’s build something amazing together.</p>
+        <div class="hero-content">
+            <h1>Contact <span class="text-gradient">Us</span></h1>
+            <p>Let’s build something amazing together.</p>
+        </div>
     </section>
 
-    <!-- CONTACT CARD -->
-    <div class="container">
-        <div class="card" style="width: 500px; max-width: 95%;">
+    <div class="container" style="display: flex; justify-content: center;">
+        <div class="card contact-card-wrapper" style="width: 500px; max-width: 95%;">
 
             <p class="contact-note">
                 We'd love to hear from you! Send us a message or reach out directly below.
             </p>
 
-            <div class="contact-info">
-                <p><strong><i class="fas fa-phone"></i> Phone:</strong> 
-                    <a href="tel:+2348028577412">+234 8028577412</a>
+            <div class="contact-info" style="margin-bottom: 25px; text-align: left; display: flex; flex-direction: column; gap: 10px;">
+                <p><strong><i class="fas fa-phone" style="color: var(--accent-purple);"></i> Phone:</strong> 
+                    <a href="tel:+2348028577412" style="color: var(--text-primary); text-decoration: none;">+234 8028577412</a>
                 </p>
 
-                <p><strong><i class="fas fa-envelope"></i> Email:</strong> 
-                    <a href="mailto:albertdev981@email.com">albertdev@email.com</a>
+                <p><strong><i class="fas fa-envelope" style="color: var(--accent-purple);"></i> Email:</strong> 
+                    <a href="mailto:albertdev981@email.com" style="color: var(--text-primary); text-decoration: none;">albertdev@email.com</a>
                 </p>
             </div>
 
-            <!-- Contact Form -->
             <form id="contactForm" class="contact-form" action="https://formspree.io/f/maqdkdrg" method="POST">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
                 <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
+                <button type="submit" style="width: 100%;">Send Message</button>
             </form>
 
-            <p id="successMessage" class="success-message"></p>
+            <p id="successMessage" class="success-message" style="margin-top: 15px; display: none; font-weight: bold; color: #10B981;"></p>
 
         </div>
     </div>
 
-    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-content">
-            <h2>AlbertDev</h2>
+            <h2>Albert<span class="text-purple">Dev</span></h2>
             <p>© 2026 AlbertDev. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- FORMSPREE JAVASCRIPT -->
     <script>
         const form = document.getElementById("contactForm");
         const successMessage = document.getElementById("successMessage");
 
         form.addEventListener("submit", function(e) {
-            e.preventDefault(); // prevent page reload
+            e.preventDefault(); 
 
             const data = new FormData(form);
 
@@ -86,17 +85,16 @@
                     form.reset();
                 } else {
                     successMessage.textContent = "⚠️ Oops! Something went wrong. Try again.";
+                    successMessage.style.color = "#EF4444";
                     successMessage.style.display = "block";
                 }
             })
             .catch(() => {
                 successMessage.textContent = "⚠️ Oops! Something went wrong. Try again.";
+                successMessage.style.color = "#EF4444";
                 successMessage.style.display = "block";
             });
         });
     </script>
-
 </body>
-
 </html>
-
