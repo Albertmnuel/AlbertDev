@@ -1,36 +1,59 @@
-/* ==========================================
-   THEME VARIABLES (The Screenshot Aesthetic)
-   ========================================== */
+/* ================== THEME MATRIX VARIABLES ================== */
 :root {
-    --bg-dark-obsidian: #030712; /* Deep midnight-slate background */
-    --bg-card-slate: #0F172A;    /* Dark electric blue/slate for cards */
-    --bg-input: #1E293B;         /* Input field background block */
-    --accent-purple: #3B82F6;    /* Bright electric blue matching the FTMO style */
-    --accent-glow: rgba(59, 130, 246, 0.25);
-    --text-primary: #F8FAFC;      /* White text headers */
-    --text-secondary: #94A3B8;    /* Soft slate blue body text */
-    --border-subtle: #1E293B;     /* Seamless card borders */
+    --bg-primary: #0f172a;       /* Dark obsidian backdrop */
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --accent-blue: #3b82f6;      /* Signature electric blue */
+    --accent-purple: #a855f7;
+    --card-bg: rgba(30, 41, 59, 0.5);
 }
 
-/* ================== BODY ================== */
-body {
-    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+/* ================== GLOBAL STYLES ================== */
+* {
     margin: 0;
-    background-color: var(--bg-dark-obsidian);
-    color: var(--text-secondary);
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
-/* ================== NAVBAR ================== */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* ================== NAVBAR DESIGN ================== */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 8%;
-    background-color: var(--bg-primary);
+    background-color: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -41,129 +64,79 @@ html {
     font-size: 24px;
     font-weight: bold;
     color: var(--text-primary);
-    display: flex;         /* Places image and text side-by-side */
-    align-items: center;   /* Aligns them perfectly on the center line */
-    gap: 12px;             /* Puts a clean gap between the image and text */
+    display: flex;         
+    align-items: center;   
+    gap: 12px;             
 }
 
-/* ADD THIS EXACT RULE TO SHRINK YOUR LOGO */
 .logo-icon {
-    height: 36px;          /* Restricts the height so it fits perfectly */
-    width: auto;           /* Keeps the hexagon from stretching or squeezing */
+    height: 36px;          
+    width: auto;           
     object-fit: contain;   
-    border-radius: 4px;    /* Smooths the corners slightly */
+    border-radius: 4px;    
 }
 
 .logo span {
-    color: var(--accent-purple);
+    color: var(--accent-blue);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--text-primary);
 }
 
 .nav-toggle {
     display: none;
     font-size: 28px;
-    color: var(--text-primary);
     cursor: pointer;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-secondary);
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover, .nav-links a.active {
-    color: var(--accent-purple);
-}
-
-/* ================== MIKCO STYLE FLOATING DROPDOWN ================== */
-.dropdown {
-    position: relative;
-}
-
-.dropdown-trigger i {
-    font-size: 12px;
-    margin-left: 4px;
-    transition: transform 0.3s ease;
-}
-
-/* Consolidated dropdown menu using Mikco's slide-and-fade animation rules */
+/* Dropdown Menu block styles */
+.dropdown { position: relative; }
 .dropdown-menu {
-    display: block; 
     position: absolute;
-    top: 100%; 
+    top: 100%;
     left: 0;
-    background-color: var(--bg-card-slate);
-    border: 1px solid var(--border-subtle);
+    background-color: #1e293b;
     list-style: none;
     padding: 10px 0;
-    min-width: 170px;
     border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 0 0 15px var(--accent-glow);
-    
-    /* Animation initial states (hidden, pulled slightly upward) */
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px); 
-    
-    /* Transition curves matching the sleek corporate interface */
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-    z-index: 1000;
+    min-width: 180px;
+    display: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
-
-.dropdown-menu li {
-    padding: 0;
-}
-
-.dropdown-menu li a {
-    color: var(--text-secondary);
-    text-decoration: none;
+.dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu a {
     display: block;
     padding: 10px 20px;
-    font-size: 14px;
-    font-weight: 600;
-    transition: all 0.2s ease;
+    color: var(--text-secondary);
 }
 
-/* Dropdown interactive links hover */
-.dropdown-menu li a:hover {
-    color: var(--text-primary);
-    background-color: rgba(59, 130, 246, 0.1); 
-    padding-left: 24px; /* Micro-motion forward bounce */
-}
-
-/* Hovering over parent slides DOWN into view */
-.dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0); 
-}
-
-/* Rotates the caret smoothly */
-.dropdown:hover .dropdown-trigger i {
-    transform: rotate(180deg);
-    color: var(--accent-purple);
-}
-
-/* ================== REBUILT HERO SECTION ================== */
+/* ================== HERO SECTION WITH TECH BACKGROUND ================== */
 .hero {
-    min-height: 70vh;
+    padding: 120px 8% 100px 8%;
+    /* Loads high-res technology code background overlayed with dark theme tint */
+    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.95)), 
+                url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070') no-repeat center center/cover;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+    min-height: 75vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 60px 20px;
-    background: radial-gradient(circle at 20% 40%, rgba(59, 130, 246, 0.12) 0%, transparent 50%);
-    overflow: hidden;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
 }
 
 .hero-container {
@@ -171,466 +144,262 @@ html {
     align-items: center;
     justify-content: space-between;
     gap: 50px;
-    width: 90%;
-    max-width: 1100px;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
+    z-index: 2;
+}
+
+.hero-text-side { flex: 1; }
+.hero-text-side h1 {
+    font-size: 54px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-text-side p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    max-width: 500px;
 }
 
 .hero-image-side {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .profile-avatar {
-    width: 100%;
-    max-width: 380px;
-    height: auto;
-    border-radius: 24px;
-    border: 2px solid var(--border-subtle);
-    box-shadow: 0 20px 40px rgba(3, 7, 18, 0.6), 0 0 30px rgba(59, 130, 246, 0.2);
-    object-fit: cover;
-}
-
-.hero-text-side {
-    flex: 1.2;
-    text-align: left;
-}
-
-.hero-text-side h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-    line-height: 1.2;
-    color: var(--text-primary);
-}
-
-.hero-text-side p {
-    font-size: 20px;
-    margin-bottom: 30px;
-    color: var(--text-secondary);
-}
-
-.hero button, .btn-primary {
-    background-color: var(--accent-purple);
-    color: var(--text-primary);
-    border: none;
-    padding: 12px 30px;
-    border-radius: 8px;
-    font-size: 18px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.hero button:hover, .btn-primary:hover {
-    background-color: #2563EB; 
-    box-shadow: 0 5px 25px var(--accent-glow);
-    transform: translateY(-2px);
-}
-
-.small-hero {
-    padding: 80px 20px;
-    border-radius: 0;
-}
-
-/* ================== LAYOUT STRUCTURE & CARDS ================== */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 0;
-}
-
-/* Sleek Flexible Grid Layout */
-.grid-3 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-}
-
-.card {
-    background-color: var(--bg-card-slate);
-    border: 1px solid var(--border-subtle);
-    padding: 30px 24px;
-    border-radius: 16px;
-    text-align: center;
-    box-sizing: border-box;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    border-color: var(--accent-purple);
-    box-shadow: 0 12px 40px var(--accent-glow);
-}
-
-.card img, .card-img-wrapper img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    object-fit: cover;
-    height: 230px;
-}
-
-.card h2 {
-    color: var(--text-primary);
-    font-size: 24px;
-    margin-bottom: 12px;
-}
-
-.card p {
-    color: var(--text-secondary);
-    font-size: 15px;
-    line-height: 1.6;
-}
-
-.card button, .btn-secondary {
-    background-color: transparent;
-    color: var(--text-primary);
-    border: 2px solid var(--accent-purple);
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.card button:hover, .btn-secondary:hover {
-    background-color: var(--accent-purple);
-    transform: scale(1.05);
-}
-
-.card-icon {
-    font-size: 40px;
-    color: var(--accent-purple);
-    margin-bottom: 15px;
-}
-
-/* ================== DETAILED SERVICES DISPLAY FIXED ================== */
-.detailed-services {
-    padding: 60px 0;
-    background: var(--bg-dark-obsidian);
-}
-
-.detailed-services .container {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.detailed-card {
-    background-color: var(--bg-card-slate);
-    border: 1px solid var(--border-subtle);
-    padding: 35px;
-    border-radius: 16px;
-    text-align: left;
-    transition: border-color 0.3s ease;
-}
-
-.detailed-card:hover {
-    border-color: var(--accent-purple);
-}
-
-.detailed-card h2 {
-    color: var(--text-primary);
-    margin-top: 0;
-    margin-bottom: 15px;
-}
-
-.detailed-card p {
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: 20px;
-    font-size: 16px;
-}
-
-/* ================== SERVICES / PORTFOLIO UTILITIES ================== */
-.services-section, .portfolio-section {
-    padding: 60px 0;
-    text-align: center;
-}
-
-.section-title {
-    font-size: 36px;
-    color: var(--text-primary);
-    margin-bottom: 40px;
-}
-
-.text-gradient {
-    background: linear-gradient(to right, #3B82F6, #60A5FA);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* ================== CONTACT FORM ================== */
-.contact-form {
-    max-width: 500px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    padding: 12px;
-    border-radius: 8px;
-    background-color: var(--bg-input);
-    border: 1px solid var(--border-subtle);
-    color: var(--text-primary);
-    font-size: 16px;
-    width: 100%;
-    box-sizing: border-box;
-    transition: border 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: var(--accent-purple);
-    box-shadow: 0 0 8px var(--accent-glow);
-    outline: none;
-}
-
-.contact-form button {
-    background-color: var(--accent-purple);
-    color: var(--text-primary);
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.contact-form button:hover {
-    background-color: #2563EB;
-    transform: scale(1.02);
-}
-
-/* ================== FOOTER ================== */
-.footer {
-    background-color: #050508;
-    border-top: 1px solid var(--border-subtle);
-    color: var(--text-primary);
-    text-align: center;
-    padding: 40px 20px;
-    margin-top: 50px;
-}
-
-.footer p {
-    color: var(--text-secondary);
-}
-
-.social-icons a {
-    text-decoration: none;
-    color: var(--text-secondary);
-    font-size: 26px;
-    margin: 0 12px;
-    display: inline-block;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.social-icons a:hover {
-    transform: scale(1.2);
-    color: var(--accent-purple);
-}
-
-/* ================== BACK TO TOP BUTTON ================== */
-#backToTop {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    display: none;
-    background-color: var(--accent-purple);
-    color: white;
-    border: none;
-    padding: 12px 18px;
+    width: 320px;
+    height: 320px;
     border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    box-shadow: 0 4px 15px var(--accent-glow);
-    transition: all 0.3s ease;
-}
-
-#backToTop:hover {
-    background-color: #2563EB;
-    transform: scale(1.1);
-}
-
-.back-home {
-    display: inline-block;
-    margin: 20px;
-    text-decoration: none;
-    color: var(--accent-purple);
-    font-weight: bold;
-}
-
-/* ================== PROJECT GRID SECTION ================== */
-.projects {
-    padding: 80px 10%;
-    text-align: center;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.project-card {
-    background-color: var(--bg-card-slate);
-    border: 1px solid var(--border-subtle);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--accent-purple);
-    box-shadow: 0 12px 30px var(--accent-glow);
-}
-
-.project-card img {
-    width: 100%;
-    height: 200px;
     object-fit: cover;
+    border: 4px solid rgba(59, 130, 246, 0.2);
 }
 
-.project-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding: 15px;
-}
-
-.demo-btn, .github-btn {
-    padding: 8px 15px;
+/* ================== BUTTON LAYOUTS ================== */
+.btn-primary, .btn-secondary {
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
     text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: 0.2s ease;
-}
-
-.demo-btn {
-    background: var(--accent-purple);
-    color: var(--text-primary);
-}
-
-.demo-btn:hover {
-    background: #2563EB;
-}
-
-.github-btn {
-    background: #1A1A26;
-    color: var(--text-primary);
-    border: 1px solid var(--border-subtle);
-}
-
-.github-btn:hover {
-    background: var(--border-subtle);
-}
-
-/* ================== RESPONSIVE MEDIA QUERIES ================== */
-@media (max-width: 950px) {
-    .nav-links {
-        flex-direction: column;
-        display: none;
-        width: 100%;
-        background-color: var(--bg-card-slate);
-        border-top: 1px solid var(--border-subtle);
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-toggle {
-        display: block;
-    }
-
-    .nav-links li {
-        text-align: center;
-        padding: 12px 0;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-    }
-    .hero-text-side {
-        text-align: center;
-    }
-    .hero-text-side h1 {
-        font-size: 36px;
-    }
-    .profile-avatar {
-        max-width: 280px;
-    }
-}
-/* Adds clean spacing between the About and Contact sections */
-#about-section {
-    margin-bottom: 60px; /* Adjust this number if you want more or less space */
-}
-/* ================== CUSTOM HERO BACKGROUND SCENE ================== */
-.hero {
-    /* Loads the dynamic tech circuit scene designed for dark mode */
-    background-image: url('https://image-generation-engine.netlify.app/api/tech-scene?theme=react-dark&bg_color=0F172A&color=3B82F6&style=minimal&pattern=circuits&opacity=0.3&v=1');
-    background-size: cover;          /* Pushes the pattern across the full section */
-    background-position: center;   /* Keeps the focus on the main content */
-    background-repeat: no-repeat;
-    background-attachment: fixed;  /* Adds a smooth parallax scrolling effect */
-    position: relative;
-    overflow: hidden;
-}
-
-/* Fades the pattern smoothly to match Mikco and Darwin styles */
-.hero::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40%;  /* Controls the height of the fade-out effect */
-    background: linear-gradient(to bottom, rgba(15, 23, 42, 0) 0%, #0F172A 100%);
-    pointer-events: none;
-    z-index: 1;  /* Keeps the dynamic content interactive */
-}
-/* ================== MIKCO HOVER ANIMATIONS ================== */
-
-/* 1. Applying MIKCO's smooth cubic-bezier physics to your portfolio and service cards */
-.portfolio-card, .detailed-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    /* MIKCO Animation Setup: Prepare physics transitions */
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* 2. When hovering over cards, they smoothly float up and throw a soft purple glow shadow */
-.portfolio-card:hover, .detailed-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 30px rgba(59, 130, 246, 0.15) !important; /* Adapted shadow to match your electric blue glow */
+.btn-primary {
+    background-color: var(--accent-blue);
+    color: #fff;
+    border: none;
 }
 
-/* 3. Applying MIKCO's button transform physics to your primary and secondary buttons */
-.btn-primary, .btn-secondary {
-    transition: all 0.3s ease;
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.btn-primary:hover, .btn-secondary:hover {
+/* MIKCO Animation Trigger: Buttons translate up slightly on hover */
+.btn-primary:hover {
+    background-color: #2563eb;
     transform: translateY(-2px);
 }
 
-/* 4. Applying MIKCO's smooth social media icon layout translations */
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* ================== PORTFOLIO & SERVICES SECTIONS ================== */
+.portfolio-section, .detailed-services {
+    padding: 100px 8%;
+    background-color: #0b0f19;
+}
+
+.detailed-services {
+    background-color: var(--bg-primary); /* Keeps alternation pattern clean */
+}
+
+.card, .detailed-card {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: left;
+    /* MIKCO Animation Setup: Prepare smooth cubic ease transforms */
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card-img-wrapper {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card h2, .detailed-card h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.card p, .detailed-card p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    color: var(--accent-blue) !important;
+    font-weight: 600;
+    margin-top: -5px;
+}
+
+/* MIKCO Animation Trigger: Cards lift 6px up and project blue ambient glow shadows on hover */
+.card:hover, .detailed-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15) !important;
+}
+
+/* ================== ABOUT & CONTACT PAGES INTEGRATION ================== */
+.about-section, .contact-section {
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.about-section {
+    background-color: #0b0f19;
+    margin-bottom: 60px; /* Leaves breathability space right above the contact flow form */
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+.contact-section {
+    background-color: var(--bg-primary);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+}
+
+/* ================== FOOTER & SOCIAL ICONS ================== */
+.footer {
+    padding: 60px 8% 40px 8%;
+    background-color: #070a12;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+.footer h2 { margin-bottom: 15px; }
+.footer p { color: var(--text-secondary); margin-bottom: 25px; }
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
 .social-icons a {
+    width: 40px;
+    height: 40px;
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.03);
+    color: var(--text-secondary);
+    text-decoration: none;
+    /* MIKCO Animation Setup: Social links hover physics transitions */
     transition: all 0.3s ease;
 }
 
+/* MIKCO Animation Trigger: Social blocks float up 3px and color match custom blue */
 .social-icons a:hover {
     transform: translateY(-3px);
-    color: #3B82F6; /* Glows your bright electric blue on hover */
+    background-color: rgba(59, 130, 246, 0.1);
+    color: var(--accent-blue);
+}
+
+/* Back to Top Navigation Arrow Element */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    background-color: var(--accent-blue);
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 99;
+    transition: background-color 0.3s;
+}
+#backToTop:hover { background-color: #2563eb; }
+
+/* ================== RESPONSIVE SCALES (MOBILE DISPLAYS) ================== */
+@media (max-width: 768px) {
+    .nav-toggle { display: block; color: white; }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #0f172a;
+        padding: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .nav-links.active { display: flex; }
+    .hero-container { flex-direction: column-reverse; text-align: center; }
+    .hero-text-side h1 { font-size: 38px; }
+    .profile-avatar { width: 240px; height: 240px; }
 }
