@@ -602,3 +602,35 @@ html {
     pointer-events: none;
     z-index: 1;  /* Keeps the dynamic content interactive */
 }
+/* ================== MIKCO HOVER ANIMATIONS ================== */
+
+/* 1. Applying MIKCO's smooth cubic-bezier physics to your portfolio and service cards */
+.portfolio-card, .detailed-card {
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* 2. When hovering over cards, they smoothly float up and throw a soft purple glow shadow */
+.portfolio-card:hover, .detailed-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(59, 130, 246, 0.15) !important; /* Adapted shadow to match your electric blue glow */
+}
+
+/* 3. Applying MIKCO's button transform physics to your primary and secondary buttons */
+.btn-primary, .btn-secondary {
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-2px);
+}
+
+/* 4. Applying MIKCO's smooth social media icon layout translations */
+.social-icons a {
+    display: inline-flex;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+    color: #3B82F6; /* Glows your bright electric blue on hover */
+}
