@@ -562,3 +562,19 @@ html {
         max-width: 280px;
     }
 }
+.logo {
+    display: flex;         /* Puts the image and text side-by-side */
+    align-items: center;   /* Centers them perfectly on the same line */
+    gap: 12px;             /* Adds a clean space between the logo and text */
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* This is the magic rule that shrinks your big logo image */
+.logo-icon {
+    height: 36px;          /* Forces the logo to stay small and fit the navbar */
+    width: auto;           /* Perfectly keeps the original shape proportions */
+    object-fit: contain;   /* Prevents any stretching or squeezing */
+    border-radius: 4px;    /* Optional: Gives it clean, slightly soft corners */
+}
