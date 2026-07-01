@@ -403,3 +403,139 @@ body {
     .hero-text-side h1 { font-size: 38px; }
     .profile-avatar { width: 240px; height: 240px; }
 }
+/* Core Configurations */
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #2b2b2b;
+    background-color: #ffffff;
+}
+
+/* Corporate Forest Green Color Matrix */
+:root {
+    --primary-green: #198754;      
+    --deep-green: #0f5132;         
+    --corporate-dark: #0e1411;     
+    --light-green-bg: #e8f5e9;     
+}
+
+.bg-corporate-dark { background-color: var(--corporate-dark) !important; }
+.text-custom-green { color: var(--primary-green) !important; }
+.bg-custom-green { background-color: var(--primary-green) !important; }
+
+.btn-green {
+    background-color: var(--primary-green) !important;
+    border-color: var(--primary-green) !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-green:hover {
+    background-color: var(--deep-green) !important;
+    transform: translateY(-2px);
+}
+
+/* Layout Blocks */
+.heading-line {
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-green);
+    border-radius: 2px;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(14, 20, 17, 0.85), rgba(14, 20, 17, 0.95)), 
+                url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070') no-repeat center center/cover;
+    height: 80vh;
+    min-height: 500px;
+}
+
+/* Sub-page Breadcrumb Header Style */
+.page-header {
+    background: linear-gradient(rgba(14, 20, 17, 0.9), rgba(14, 20, 17, 0.95)),
+                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070') no-repeat center center/cover;
+}
+
+/* Interactive Layout Elements */
+.feature-icon, .icon-box, .contact-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background-color: var(--light-green-bg);
+}
+
+.contact-icon { width: 45px; height: 45px; border-radius: 50%; }
+
+.service-card {
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: 12px;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(89, 40, 40, 0.08) !important;
+}
+
+.social-icon {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #a0a0a0;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--primary-green);
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+.footer-links a {
+    color: #a0a0a0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover { color: var(--primary-green); }
+
+
+/* ==========================================================================
+   ADDED EXTENSIONS: ALBERTDEV HERO BACKGROUND IMAGE & HOVER INTERACTIONS
+   ========================================================================== */
+
+/* 1. Nice Tech Background Overlay Added to your Hero Section */
+.hero {
+    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), 
+                url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070') no-repeat center center/cover !important;
+    background-attachment: fixed !important;
+}
+
+/* 2. Seamless Spacing Between New About and Contact Sections */
+.about-section {
+    padding: 80px 0;
+    margin-bottom: 60px;
+}
+.contact-section {
+    padding: 80px 0;
+}
+
+/* 3. MIKCO Hover Animation Applied to Portfolio Cards & Detailed Cards */
+.portfolio-card, .detailed-card {
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.portfolio-card:hover, .detailed-card:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 15px 30px rgba(25, 135, 84, 0.15) !important; /* Soft green corporate shadow hue */
+}
