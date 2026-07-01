@@ -13,7 +13,9 @@
 <body>
 
 <nav class="navbar">
-    <h1 class="logo">Albert<span>Dev</span></h1>
+    <h1 class="logo">
+        <img src="photo_2026-03-06_22-39-14.jpg" alt="AlbertDev Logo" class="logo-icon"> Albert<span>Dev</span>
+    </h1>
     <div class="nav-toggle">&#9776;</div>
     <ul class="nav-links">
         <li><a href="#hero" class="active">Home</a></li>
@@ -33,48 +35,20 @@
 
 <section id="hero" class="hero">
     <div class="hero-container">
-        
         <div class="hero-image-side">
             <img src="Alby.jpg" alt="Albert Emmanuel" class="profile-avatar">
         </div>
-        
         <div class="hero-text-side">
             <h1>Welcome to <span class="text-gradient">AlbertDev</span></h1>
             <p>Building high-performance web experiences one elegant line of code at a time.</p>
             <button class="btn-primary" onclick="scrollToCards()">Get Started <i class="fas fa-arrow-right"></i></button>
         </div>
-
-    </div>
-</section>
-
-<section class="detailed-services">
-    <div class="container grid-3">
-        
-        <div class="detailed-card">
-            <h2>Web Design Deep Dive</h2>
-            <p>We specialize in crafting visually appealing, mobile-friendly websites that leave a lasting impression. Our designers collaborate closely with clients to create unique designs that reflect their brand's personality.</p>
-            <button class="btn-secondary" onclick="window.location.href='contact.html'">Get Started</button>
-        </div>
-
-        <div class="detailed-card">
-            <h2>UI/UX Design Systems</h2>
-            <p>Our UI/UX design service focuses on enhancing user satisfaction by improving usability, accessibility, and interaction. We combine research, user personas, wireframes, and prototypes to create intuitive layouts.</p>
-            <button class="btn-secondary" onclick="window.location.href='contact.html'">Get Started</button>
-        </div>
-
-        <div class="detailed-card">
-            <h2>Technical SEO Optimization</h2>
-            <p>SEO is essential for ensuring your website reaches the right audience. Our SEO experts analyze your website’s structure, content, and backlinks to implement keyword targeting, meta optimization, and core web vitals improvements.</p>
-            <button class="btn-secondary" onclick="window.location.href='contact.html'">Get Started</button>
-        </div>
-
     </div>
 </section>
 
 <section id="cards-section" class="portfolio-section">
     <h2 class="section-title">Featured Work</h2>
     <div class="container grid-3">
-
         <div class="card portfolio-card profile-card">
             <div class="card-img-wrapper">
                 <img src="Alby.jpg" alt="Albert Emmanuel" loading="lazy">
@@ -101,13 +75,11 @@
             <p>E-commerce setup featuring elegant, confident fashion pieces engineered for fluid UI response.</p>
             <button class="btn-primary" onclick="window.open('https://bight-s-apparel.vercel.app/')">Live Demo <i class="fas fa-external-link-alt"></i></button>
         </div>
-
     </div>
 </section>
 
-<section class="detailed-services">
-    <div class="container">
-        
+<section id="services" class="detailed-services">
+    <div class="container grid-3">
         <div class="detailed-card">
             <h2>Web Design Deep Dive</h2>
             <p>We specialize in crafting visually appealing, mobile-friendly websites that leave a lasting impression. Our designers collaborate closely with clients to create unique designs that reflect their brand's personality.</p>
@@ -125,7 +97,33 @@
             <p>SEO is essential for ensuring your website reaches the right audience. Our SEO experts analyze your website’s structure, content, and backlinks to implement keyword targeting, meta optimization, and core web vitals improvements.</p>
             <button class="btn-secondary" onclick="window.location.href='contact.html'">Get Started</button>
         </div>
+    </div>
+</section>
 
+<section id="about-section" class="about-section">
+    <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <p>I am a software developer deeply committed to creating fast, responsive, and data-driven web solutions. Balancing engineering projects with my academic path at Mountain Top University (MTU), I focus on building streamlined frontend layouts integrated with reliable Java and MySQL backend database configurations.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact-section" class="contact-section">
+    <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <form class="contact-form" onsubmit="event.preventDefault();">
+            <div class="form-group">
+                <input type="text" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Send Message</button>
+        </form>
     </div>
 </section>
 
