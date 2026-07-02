@@ -35,11 +35,11 @@
 
 <section id="hero" class="hero">
     <div class="hero-container">
-        
+
         <div class="hero-image-side">
             <img src="Alby.jpg" alt="Albert Emmanuel" class="profile-avatar">
         </div>
-        
+
         <div class="hero-text-side">
             <h1>Welcome to <span class="text-gradient">AlbertDev</span></h1>
             <p>Building high-performance web experiences one elegant line of code at a time.</p>
@@ -50,10 +50,10 @@
 </section>
 
 <section id="cards-section" class="portfolio-section">
-    <h2 class="section-title">Featured Work</h2>
+    <h2 class="section-title reveal">Featured Work</h2>
     <div class="container grid-3">
 
-        <div class="card portfolio-card profile-card">
+        <div class="card portfolio-card profile-card reveal" style="--i:0">
             <div class="card-img-wrapper">
                 <img src="Alby.jpg" alt="Albert Emmanuel" loading="lazy">
             </div>
@@ -62,7 +62,7 @@
             <button class="btn-secondary" onclick="window.location.href='mywork.html'">Follow</button>
         </div>
 
-        <div class="card portfolio-card">
+        <div class="card portfolio-card reveal" style="--i:1">
             <div class="card-img-wrapper">
                 <img src="grand.jpg" alt="Music Instrument Website" loading="lazy">
             </div>
@@ -71,7 +71,7 @@
             <button class="btn-primary" onclick="window.open('https://musotrax.netlify.app/')">Live Demo <i class="fas fa-external-link-alt"></i></button>
         </div>
 
-        <div class="card portfolio-card">
+        <div class="card portfolio-card reveal" style="--i:2">
             <div class="card-img-wrapper">
                 <img src="skirt.jpg" alt="Bright's Apparel" loading="lazy">
             </div>
@@ -84,22 +84,22 @@
 </section>
     <section id="services" class="detailed-services">
     <div class="container grid-3">
-        
-        <div class="detailed-card">
+
+        <div class="detailed-card reveal" style="--i:0">
             <h2>Web Design Deep Dive</h2>
             <p>We specialize in crafting visually appealing, mobile-friendly websites that leave a lasting impression. Our designers collaborate closely with clients to create unique designs that reflect their brand's personality.</p>
             <button class="btn-secondary" onclick="window.location.href='contact.html'">Get Started</button>
         </div>
 
-        <div class="detailed-card">
+        <div class="detailed-card reveal" style="--i:1">
             <h2>UI/UX Design Systems</h2>
             <p>Our UI/UX design service focuses on enhancing user satisfaction by improving usability, accessibility, and interaction. We combine research, user personas, wireframes, and prototypes to create intuitive layouts.</p>
             <button class="btn-secondary" onclick="window.location.href='contact.html'">Get Started</button>
         </div>
 
-        <div class="detailed-card">
+        <div class="detailed-card reveal" style="--i:2">
             <h2>Technical SEO Optimization</h2>
-            <p>SEO is essential for ensuring your website reaches the right audience. Our SEO experts analyze your website’s structure, content, and backlinks to implement keyword targeting, meta optimization, and core web vitals improvements.</p>
+            <p>SEO is essential for ensuring your website reaches the right audience. Our SEO experts analyze your website's structure, content, and backlinks to implement keyword targeting, meta optimization, and core web vitals improvements.</p>
             <button class="btn-secondary" onclick="window.location.href='contact.html'">Get Started</button>
         </div>
 
@@ -108,8 +108,8 @@
 
 <section id="about-section" class="about-section">
     <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
+        <h2 class="section-title reveal">About Me</h2>
+        <div class="about-content reveal">
             <p>I am a software developer deeply committed to creating fast, responsive, and data-driven web solutions. Balancing engineering projects with my academic path at Mountain Top University (MTU), I focus on building streamlined frontend layouts integrated with reliable Java and MySQL backend database configurations.</p>
         </div>
     </div>
@@ -117,8 +117,8 @@
 
 <section id="contact-section" class="contact-section">
     <div class="container">
-        <h2 class="section-title">Contact Us</h2>
-        <form class="contact-form" onsubmit="event.preventDefault();">
+        <h2 class="section-title reveal">Contact Us</h2>
+        <form class="contact-form reveal" onsubmit="event.preventDefault();">
             <div class="form-group">
                 <input type="text" placeholder="Your Name" required>
             </div>
@@ -157,18 +157,35 @@
         document.getElementById('cards-section').scrollIntoView({ behavior: 'smooth' });
     }
 
+    // Back to top: toggles a "show" class (lets the CSS bounce-in animation play)
+    // instead of setting display directly.
     const backToTop = document.getElementById("backToTop");
     window.onscroll = function() {
         if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            backToTop.style.display = "block";
+            backToTop.classList.add("show");
         } else {
-            backToTop.style.display = "none";
+            backToTop.classList.remove("show");
         }
     };
 
     backToTop.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
+
+    // Scroll-reveal: fades/slides in any element with class="reveal" as it
+    // enters the viewport. Elements with style="--i:0/1/2..." stagger in
+    // one after another (used on the card grids above).
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    revealEls.forEach(el => revealObserver.observe(el));
 </script>
 </body>
 </html>
