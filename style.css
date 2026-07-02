@@ -1,15 +1,15 @@
-/* ==========================================
+[7/2/2026 7:11 PM] D_metree 🤫: /* ==========================================
    THEME VARIABLES (The Screenshot Aesthetic)
    ========================================== */
 :root {
-    --bg-dark-obsidian: #030712;
-    --bg-card-slate: #0F172A;
-    --bg-input: #1E293B;
-    --accent-purple: #3B82F6;
+    --bg-dark-obsidian: #030712; /* Deep midnight-slate background */
+    --bg-card-slate: #0F172A;    /* Dark electric blue/slate for cards */
+    --bg-input: #1E293B;         /* Input field background block */
+    --accent-purple: #3B82F6;    /* Bright electric blue matching the FTMO style */
     --accent-glow: rgba(59, 130, 246, 0.25);
-    --text-primary: #F8FAFC;
-    --text-secondary: #94A3B8;
-    --border-subtle: #1E293B;
+    --text-primary: #F8FAFC;      /* White text headers */
+    --text-secondary: #94A3B8;    /* Soft slate blue body text */
+    --border-subtle: #1E293B;     /* Seamless card borders */
 }
 
 /* ================== BODY ================== */
@@ -30,35 +30,23 @@ html {
     justify-content: space-between;
     align-items: center;
     background-color: rgba(18, 18, 26, 0.8);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px); 
     -webkit-backdrop-filter: blur(12px);
     padding: 15px 40px;
     position: sticky;
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid var(--border-subtle);
-    animation: navDropIn 0.6s ease both;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    color: var(--text-primary);
     font-size: 24px;
     font-weight: bold;
-    color: #ffffff;
 }
 
 .logo span {
     color: var(--accent-purple);
-    animation: glowPulse 2.8s ease-in-out infinite;
-}
-
-.logo-icon {
-    height: 36px;
-    width: auto;
-    object-fit: contain;
-    border-radius: 4px;
 }
 
 .nav-toggle {
@@ -76,42 +64,18 @@ html {
     padding: 0;
 }
 
-/* Underline-sweep hover instead of a flat color change */
 .nav-links a {
-    position: relative;
     text-decoration: none;
     color: var(--text-secondary);
     font-weight: bold;
-    padding-bottom: 4px;
     transition: color 0.3s ease;
 }
 
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--accent-purple);
-    border-radius: 2px;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links a:hover, .nav-links a.active {
     color: var(--accent-purple);
 }
 
-.nav-links a:hover::after,
-.nav-links a.active::after {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-/* ================== DROPDOWN ================== */
+/* ================== MIKCO STYLE FLOATING DROPDOWN ================== */
 .dropdown {
     position: relative;
 }
@@ -122,10 +86,11 @@ html {
     transition: transform 0.3s ease;
 }
 
+/* Consolidated dropdown menu using Mikco's slide-and-fade animation rules */
 .dropdown-menu {
-    display: block;
+    display: block; 
     position: absolute;
-    top: 100%;
+    top: 100%; 
     left: 0;
     background-color: var(--bg-card-slate);
     border: 1px solid var(--border-subtle);
@@ -134,9 +99,13 @@ html {
     min-width: 170px;
     border-radius: 8px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 0 0 15px var(--accent-glow);
+    
+    /* Animation initial states (hidden, pulled slightly upward) */
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-10px);
+    transform: translateY(-10px); 
+    
+    /* Transition curves matching the sleek corporate interface */
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
     z-index: 1000;
 }
@@ -155,24 +124,26 @@ html {
     transition: all 0.2s ease;
 }
 
+/* Dropdown interactive links hover */
 .dropdown-menu li a:hover {
     color: var(--text-primary);
-    background-color: rgba(59, 130, 246, 0.1);
-    padding-left: 24px;
+    background-color: rgba(59, 130, 246, 0.1); 
+    padding-left: 24px; /* Micro-motion forward bounce */
 }
 
+/* Hovering over parent slides DOWN into view */
 .dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translateY(0); 
 }
 
+/* Rotates the caret smoothly */
 .dropdown:hover .dropdown-trigger i {
     transform: rotate(180deg);
     color: var(--accent-purple);
 }
-
-/* ================== HERO SECTION ================== */
+[7/2/2026 7:11 PM] D_metree 🤫: /* ================== REBUILT HERO SECTION ================== */
 .hero {
     min-height: 70vh;
     display: flex;
@@ -184,8 +155,7 @@ html {
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
 }
-
-.hero-container {
+ .hero-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -200,7 +170,6 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fadeInScale 0.9s ease-out 0.15s both;
 }
 
 .profile-avatar {
@@ -211,12 +180,6 @@ html {
     border: 2px solid var(--border-subtle);
     box-shadow: 0 20px 40px rgba(3, 7, 18, 0.6), 0 0 30px rgba(59, 130, 246, 0.2);
     object-fit: cover;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.profile-avatar:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 25px 50px rgba(3, 7, 18, 0.7), 0 0 45px rgba(59, 130, 246, 0.35);
 }
 
 .hero-text-side {
@@ -229,18 +192,15 @@ html {
     margin-bottom: 20px;
     line-height: 1.2;
     color: var(--text-primary);
-    animation: fadeInUp 0.8s ease-out both;
 }
 
 .hero-text-side p {
     font-size: 20px;
     margin-bottom: 30px;
     color: var(--text-secondary);
-    animation: fadeInUp 0.8s ease-out 0.15s both;
 }
 
-.hero button,
-.btn-primary {
+.hero button, .btn-primary {
     background-color: var(--accent-purple);
     color: var(--text-primary);
     border: none;
@@ -249,34 +209,11 @@ html {
     font-size: 18px;
     cursor: pointer;
     font-weight: 600;
-    position: relative;
-    overflow: hidden;
     transition: all 0.3s ease;
-    animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
-/* Shimmer sweep across the button on hover */
-.hero button::before,
-.btn-primary::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -75%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
-    transform: skewX(-20deg);
-    transition: left 0.6s ease;
-}
-
-.hero button:hover::before,
-.btn-primary:hover::before {
-    left: 125%;
-}
-
-.hero button:hover,
-.btn-primary:hover {
-    background-color: #2563EB;
+.hero button:hover, .btn-primary:hover {
+    background-color: #2563EB; 
     box-shadow: 0 5px 25px var(--accent-glow);
     transform: translateY(-2px);
 }
@@ -286,7 +223,7 @@ html {
     border-radius: 0;
 }
 
-/* ================== LAYOUT / CARDS ================== */
+/* ================== LAYOUT STRUCTURE & CARDS ================== */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -294,6 +231,7 @@ html {
     padding: 40px 0;
 }
 
+/* Sleek Flexible Grid Layout */
 .grid-3 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -316,19 +254,12 @@ html {
     box-shadow: 0 12px 40px var(--accent-glow);
 }
 
-.card img,
-.card-img-wrapper img {
+.card img, .card-img-wrapper img {
     width: 100%;
     border-radius: 10px;
     margin-bottom: 15px;
     object-fit: cover;
     height: 230px;
-    transition: transform 0.5s ease;
-}
-
-.card:hover img,
-.card:hover .card-img-wrapper img {
-    transform: scale(1.05);
 }
 
 .card h2 {
@@ -343,8 +274,7 @@ html {
     line-height: 1.6;
 }
 
-.card button,
-.btn-secondary {
+.card button, .btn-secondary {
     background-color: transparent;
     color: var(--text-primary);
     border: 2px solid var(--accent-purple);
@@ -355,8 +285,7 @@ html {
     transition: all 0.3s ease;
 }
 
-.card button:hover,
-.btn-secondary:hover {
+.card button:hover, .btn-secondary:hover {
     background-color: var(--accent-purple);
     transform: scale(1.05);
 }
@@ -365,14 +294,9 @@ html {
     font-size: 40px;
     color: var(--accent-purple);
     margin-bottom: 15px;
-    transition: transform 0.4s ease;
 }
 
-.card:hover .card-icon {
-    transform: rotate(-8deg) scale(1.1);
-}
-
-/* ================== DETAILED SERVICES ================== */
+/* ================== DETAILED SERVICES DISPLAY FIXED ================== */
 .detailed-services {
     padding: 60px 0;
     background: var(--bg-dark-obsidian);
@@ -390,12 +314,11 @@ html {
     padding: 35px;
     border-radius: 16px;
     text-align: left;
-    transition: border-color 0.3s ease, transform 0.3s ease;
+    transition: border-color 0.3s ease;
 }
 
 .detailed-card:hover {
     border-color: var(--accent-purple);
-    transform: translateX(6px);
 }
 
 .detailed-card h2 {
@@ -410,31 +333,8 @@ html {
     margin-bottom: 20px;
     font-size: 16px;
 }
-
-/* ================== SCROLL-REVEAL UTILITY ================== */
-/* Add class="reveal" to any element (cards, detailed-card, section-title, etc.)
-   Pairs with the tiny JS snippet below — it toggles "is-visible" as elements
-   enter the viewport. Pure CSS can't detect scroll position on its own. */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Stagger children of a revealed grid — give each card an index via
-   style="--i:0" / "--i:1" / "--i:2"... or let the JS below do it for you */
-.reveal.is-visible[style*="--i"] {
-    transition-delay: calc(var(--i, 0) * 0.12s);
-}
-
-/* ================== SERVICES / PORTFOLIO UTILITIES ================== */
-.services-section,
-.portfolio-section {
+[7/2/2026 7:11 PM] D_metree 🤫: /* ================== SERVICES / PORTFOLIO UTILITIES ================== */
+.services-section, .portfolio-section {
     padding: 60px 0;
     text-align: center;
 }
@@ -446,13 +346,10 @@ html {
 }
 
 .text-gradient {
-    background: linear-gradient(to right, #3B82F6, #60A5FA, #3B82F6);
-    background-size: 200% auto;
+    background: linear-gradient(to right, #3B82F6, #60A5FA);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: gradientFlow 4s linear infinite;
 }
-
 /* ================== CONTACT FORM ================== */
 .contact-form {
     max-width: 500px;
@@ -472,7 +369,7 @@ html {
     font-size: 16px;
     width: 100%;
     box-sizing: border-box;
-    transition: border 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-form input:focus,
@@ -480,7 +377,6 @@ html {
     border-color: var(--accent-purple);
     box-shadow: 0 0 8px var(--accent-glow);
     outline: none;
-    transform: translateY(-1px);
 }
 
 .contact-form button {
@@ -524,17 +420,7 @@ html {
 }
 
 .social-icons a:hover {
-    transform: scale(1.2) rotate(-6deg);
-    color: var(--accent-purple);
-}
-
-.footer-links a {
-    color: #a0a0a0;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.footer-links a:hover {
+    transform: scale(1.2);
     color: var(--accent-purple);
 }
 
@@ -555,13 +441,6 @@ html {
     transition: all 0.3s ease;
 }
 
-/* Shown via JS by toggling this class instead of display:block,
-   so the entrance animation actually gets to play */
-#backToTop.show {
-    display: block;
-    animation: bounceIn 0.5s ease both;
-}
-
 #backToTop:hover {
     background-color: #2563EB;
     transform: scale(1.1);
@@ -575,7 +454,7 @@ html {
     font-weight: bold;
 }
 
-/* ================== PROJECT GRID ================== */
+/* ================== PROJECT GRID SECTION ================== */
 .projects {
     padding: 80px 10%;
     text-align: center;
@@ -606,11 +485,6 @@ html {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.project-card:hover img {
-    transform: scale(1.08);
 }
 
 .project-buttons {
@@ -620,8 +494,7 @@ html {
     padding: 15px;
 }
 
-.demo-btn,
-.github-btn {
+.demo-btn, .github-btn {
     padding: 8px 15px;
     text-decoration: none;
     border-radius: 6px;
@@ -636,7 +509,6 @@ html {
 
 .demo-btn:hover {
     background: #2563EB;
-    transform: translateY(-2px);
 }
 
 .github-btn {
@@ -647,85 +519,8 @@ html {
 
 .github-btn:hover {
     background: var(--border-subtle);
-    transform: translateY(-2px);
 }
-
-/* ================== KEYFRAME ANIMATIONS ================== */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(24px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInScale {
-    from {
-        opacity: 0;
-        transform: scale(0.94);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes navDropIn {
-    from {
-        opacity: 0;
-        transform: translateY(-16px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes glowPulse {
-    0%, 100% {
-        text-shadow: 0 0 6px rgba(59, 130, 246, 0.4);
-    }
-    50% {
-        text-shadow: 0 0 16px rgba(59, 130, 246, 0.9);
-    }
-}
-
-@keyframes gradientFlow {
-    to {
-        background-position: 200% center;
-    }
-}
-
-@keyframes bounceIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.3);
-    }
-    60% {
-        opacity: 1;
-        transform: scale(1.08);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-/* Respect users who've asked their OS to reduce motion */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.001ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.001ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-
-/* ================== RESPONSIVE MEDIA QUERIES ================== */
+[7/2/2026 7:11 PM] D_metree 🤫: /* ================== RESPONSIVE MEDIA QUERIES ================== */
 @media (max-width: 950px) {
     .nav-links {
         flex-direction: column;
@@ -748,8 +543,7 @@ html {
         padding: 12px 0;
     }
 }
-
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
     .hero-container {
         flex-direction: column;
         text-align: center;
@@ -764,4 +558,20 @@ html {
     .profile-avatar {
         max-width: 280px;
     }
+}
+.logo {
+    display: flex;         /* Puts the image and text side-by-side */
+    align-items: center;   /* Centers them perfectly on the same line */
+    gap: 12px;             /* Adds a clean space between the logo and text */
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* This is the magic rule that shrinks your big logo image */
+.logo-icon {
+    height: 36px;          /* Forces the logo to stay small and fit the navbar */
+    width: auto;           /* Perfectly keeps the original shape proportions */
+    object-fit: contain;   /* Prevents any stretching or squeezing */
+    border-radius: 4px;    /* Optional: Gives it clean, slightly soft corners */
 }
