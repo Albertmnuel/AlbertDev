@@ -1,208 +1,162 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlbertDev Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VaultX - Banking UI Concept</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-<nav class="navbar">
-    <h1 class="logo">
-        <img src="Albertdev.jpg" alt="AlbertDev Logo" class="logo-icon"> Albert<span>Dev</span>
-    </h1>
-    <div class="nav-toggle">&#9776;</div>
-    <ul class="nav-links">
-        <li><a href="#hero" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li class="dropdown">
-            <a href="#services" class="dropdown-trigger">Services <i class="fas fa-caret-down"></i></a>
-            <ul class="dropdown-menu">
-                <li><a href="contact.html">Web Design</a></li>
-                <li><a href="contact.html">UI/UX Design</a></li>
-                <li><a href="contact.html">SEO Optimization</a></li>
-            </ul>
-        </li>
-        <li><a href="#cards-section">Portfolio</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
+  <div class="dashboard">
 
-<section id="hero" class="hero">
-    <div class="hero-container">
-        
-        <div class="hero-image-side">
-            <img src="Alby.jpg" alt="Albert Emmanuel" class="profile-avatar">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <i class="fa-solid fa-building-columns"></i>
+        <h2>VaultX</h2>
+      </div>
+
+      <nav>
+       <ul>
+  <li class="active">
+    <a href="#">
+      <i class="fa-solid fa-house"></i>
+      <span>Dashboard</span>
+    </a>
+  </li>
+
+  <li>
+    <a href="#">
+      <i class="fa-solid fa-wallet"></i>
+      <span>Accounts</span>
+    </a>
+  </li>
+
+  <li>
+    <a href="#">
+      <i class="fa-solid fa-money-bill-transfer"></i>
+      <span>Transfers</span>
+    </a>
+  </li>
+
+  <li>
+    <a href="#">
+      <i class="fa-solid fa-credit-card"></i>
+      <span>Cards</span>
+    </a>
+  </li>
+
+  <li>
+    <a href="#">
+      <i class="fa-solid fa-chart-line"></i>
+      <span>Analytics</span>
+    </a>
+  </li>
+
+  <li>
+    <a href="#">
+      <i class="fa-solid fa-gear"></i>
+      <span>Settings</span>
+    </a>
+  </li>
+</ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="topbar-text">
+          <h1>Welcome back, Albert</h1>
+          <p>Manage your finances easily and securely.</p>
         </div>
-        
-        <div class="hero-text-side">
-            <h1>Welcome to <span class="text-gradient">AlbertDev</span></h1>
-            <p>Building high-performance web experiences one elegant line of code at a time.</p>
-            <button class="btn-primary" onclick="scrollToCards()">Get Started <i class="fas fa-arrow-right"></i></button>
+
+       <div class="profile">
+  <img src="C:\Users\User\CODES\VaultX\images\VaultX logo.png" alt="Albert">
+</div>
+      </header>
+
+      <!-- Balance Cards -->
+      <section id="dashboard" class="cards">
+        <div class="card primary">
+          <p>Total Balance</p>
+          <h2>₦1,245,000</h2>
+          <span>+12.4% this month</span>
         </div>
 
-    </div>
-</section>
+        <div class="card" id="accounts">
+          <p>Income</p>
+          <h2>₦420,000</h2>
+          <span>Last 30 days</span>
+        </div>
 
-<section id="cards-section" class="portfolio-section">
-    <h2 class="section-title">Featured Work</h2>
-    <div class="container grid-3">
+        <div class="card" id="analytics">
+          <p>Expenses</p>
+          <h2>₦185,000</h2>
+          <span>Last 30 days</span>
+        </div>
+      </section>
 
-        <div class="card portfolio-card profile-card">
-            <div class="card-img-wrapper">
-                <img src="Alby.jpg" alt="Albert Emmanuel" loading="lazy">
+      <!-- Quick Actions -->
+      <section id="transfers" class="quick-actions">
+        <h2>Quick Actions</h2>
+        <div class="action-buttons">
+          <button><i class="fa-solid fa-paper-plane"></i> Send Money</button>
+          <button><i class="fa-solid fa-download"></i> Receive</button>
+          <button id="cards"><i class="fa-solid fa-plus"></i> Add Card</button>
+          <button id="settings"><i class="fa-solid fa-file-invoice"></i> Pay Bills</button>
+        </div>
+      </section>
+
+      <!-- Transactions -->
+      <section class="transactions">
+        <div class="section-title">
+          <h2>Recent Transactions</h2>
+          <a href="#">See all</a>
+        </div>
+
+        <div class="transaction-list">
+          <div class="transaction">
+            <div class="left">
+              <div class="icon green"><i class="fa-solid fa-arrow-down"></i></div>
+              <div>
+                <h4>Salary Payment</h4>
+                <p>March 21, 2026</p>
+              </div>
             </div>
-            <h2>Albert Emmanuel</h2>
-            <p class="subtitle">Frontend & Backend Developer</p>
-            <button class="btn-secondary" onclick="window.location.href='mywork.html'">Follow</button>
-        </div>
+            <h3 class="amount plus">+ ₦250,000</h3>
+          </div>
 
-        <div class="card portfolio-card">
-            <div class="card-img-wrapper">
-                <img src="grand.jpg" alt="Music Instrument Website" loading="lazy">
+          <div class="transaction">
+            <div class="left">
+              <div class="icon red"><i class="fa-solid fa-cart-shopping"></i></div>
+              <div>
+                <h4>Online Shopping</h4>
+                <p>March 20, 2026</p>
+              </div>
             </div>
-            <h2>Music Instrument Hub</h2>
-            <p>A responsive application showcasing musical instruments and premium tuning services.</p>
-            <button class="btn-primary" onclick="window.open('https://musotrax.netlify.app/')">Live Demo <i class="fas fa-external-link-alt"></i></button>
-        </div>
+            <h3 class="amount minus">- ₦35,000</h3>
+          </div>
 
-        <div class="card portfolio-card">
-            <div class="card-img-wrapper">
-                <img src="skirt.jpg" alt="Bright's Apparel" loading="lazy">
+          <div class="transaction">
+            <div class="left">
+              <div class="icon blue"><i class="fa-solid fa-bolt"></i></div>
+              <div>
+                <h4>Electricity Bill</h4>
+                <p>March 19, 2026</p>
+              </div>
             </div>
-            <h2>Bright's Apparel</h2>
-            <p>E-commerce setup featuring elegant, confident fashion pieces engineered for fluid UI response.</p>
-            <button class="btn-primary" onclick="window.open('https://bight-s-apparel.vercel.app/')">Live Demo <i class="fas fa-external-link-alt"></i></button>
+            <h3 class="amount minus">- ₦18,500</h3>
+          </div>
         </div>
- </div>
-</section>
-    <section id="services" class="detailed-services">
-    <div class="container grid-3">
-        
-        <div class="detailed-card">
-            <h2>Web Design Deep Dive</h2>
-            <p>We specialize in crafting visually appealing, mobile-friendly websites that leave a lasting impression. Our designers collaborate closely with clients to create unique designs that reflect their brand's personality.</p>
-            <button class="btn-secondary" onclick="window.location.href='contact.html'">Get Started</button>
-        </div>
+      </section>
 
-        <div class="detailed-card">
-            <h2>UI/UX Design Systems</h2>
-            <p>Our UI/UX design service focuses on enhancing user satisfaction by improving usability, accessibility, and interaction. We combine research, user personas, wireframes, and prototypes to create intuitive layouts.</p>
-            <button class="btn-secondary" onclick="window.location.href='contact.html'">Get Started</button>
-        </div>
+    </main>
+  </div>
 
-        <div class="detailed-card">
-            <h2>Technical SEO Optimization</h2>
-            <p>SEO is essential for ensuring your website reaches the right audience. Our SEO experts analyze your website’s structure, content, and backlinks to implement keyword targeting, meta optimization, and core web vitals improvements.</p>
-            <button class="btn-secondary" onclick="window.location.href='contact.html'">Get Started</button>
-        </div>
-
-    </div>
-</section>
-
-<section id="about-section" class="about-section">
-    <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <p>I am a software developer deeply committed to creating fast, responsive, and data-driven web solutions. Balancing engineering projects with my academic path at Mountain Top University (MTU), I focus on building streamlined frontend layouts integrated with reliable Java and MySQL backend database configurations.</p>
-        </div>
-    </div>
-</section>
-
-<!-- Section 4: Contact Section (Synchronized Formspree Handler) -->
-<section id="contact-section" class="contact-section">
-    <div class="container">
-        <h2 class="section-title">Contact Us</h2>
-        <form id="contactForm" class="contact-form" action="https://formspree.io/f/maqdkdrg" method="POST">
-            <div class="form-group">
-                <input type="text" name="name" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-                <input type="email" name="email" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="btn-primary">Send Message</button>
-        </form>
-
-        <p id="successMessage" class="success-message" style="margin-top: 15px; display: none; font-weight: bold; color: #10B981;"></p>
-    </div>
-</section>
-
-<footer class="footer">
-    <div class="footer-content">
-        <h2>Albert<span class="text-purple">Dev</span></h2>
-        <p>© 2026 AlbertDev. All rights reserved.</p>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-        </div>
-    </div>
-</footer>
-
-<button id="backToTop" title="Go to top">↑</button>
-
-<script>
-    const toggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    toggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-
-    function scrollToCards() {
-        document.getElementById('cards-section').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    const backToTop = document.getElementById("backToTop");
-    window.onscroll = function() {
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            backToTop.style.display = "block";
-        } else {
-            backToTop.style.display = "none";
-        }
-    };
-
-    backToTop.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    });
- // Formspree AJAX Submission Handler (Matched to contact.html)
-const form = document.getElementById("contactForm");
-const successMessage = document.getElementById("successMessage");
-
-form.addEventListener("submit", function(e) {
-    e.preventDefault(); 
-
-    const data = new FormData(form);
-
-    fetch(form.action, {
-        method: "POST",
-        body: data,
-        headers: { 'Accept': 'application/json' }
-    })
-    .then(response => {
-        if(response.ok) {
-            successMessage.textContent = "✅ Thank you! Your message has been sent.";
-            successMessage.style.color = "#10B981";
-            successMessage.style.display = "block";
-            form.reset();
-        } else {
-            successMessage.textContent = "⚠️ Oops! Something went wrong. Try again.";
-            successMessage.style.color = "#EF4444";
-            successMessage.style.display = "block";
-        }
-    })
-    .catch(() => {
-        successMessage.textContent = "⚠️ Oops! Something went wrong. Try again.";
-        successMessage.style.color = "#EF4444";
-        successMessage.style.display = "block";
-    });
-});
-</script>
 </body>
 </html>
