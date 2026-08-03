@@ -107,12 +107,33 @@
     </div>
 </section>
 
+<!-- Section 3: About Me Section with Terminal Status Dashboard -->
 <section id="about-section" class="about-section">
     <div class="container">
         <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <p>I am a software developer deeply committed to creating fast, responsive, and data-driven web solutions. Balancing engineering projects with my academic path at Mountain Top University (MTU), I focus on building streamlined frontend layouts integrated with reliable Java and MySQL backend database configurations.</p>
+        
+        <div class="about-layout">
+            <div class="about-content">
+                <p>I am a software developer deeply committed to creating fast, responsive, and data-driven web solutions. Balancing engineering projects with my academic path at Mountain Top University (MTU), I focus on building streamlined frontend layouts integrated with reliable Java and MySQL backend database configurations.</p>
+            </div>
+            
+            <div class="developer-dashboard">
+                <div class="dashboard-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="terminal-title">system.status</span>
+                </div>
+                <div class="dashboard-body">
+                    <div class="status-line"><span class="label">STATUS</span><span class="separator">:</span><span class="value dynamic-green">ONLINE <span class="pulse-dot"></span></span></div>
+                    <div class="status-line"><span class="label">LOCATION</span><span class="separator">:</span><span class="value">Nigeria</span></div>
+                    <div class="status-line"><span class="label">FOCUS</span><span class="separator">:</span><span class="value">Frontend Layouts • Java • MySQL</span></div>
+                    <div class="status-line"><span class="label">EDITOR</span><span class="separator">:</span><span class="value">VS Code</span></div>
+                    <div class="status-line"><span class="label">MINDSET</span><span class="separator">:</span><span class="value text-gradient-small">Stay Locked In ⚡</span></div>
+                </div>
+            </div>
         </div>
+
     </div>
 </section>
 
@@ -139,10 +160,10 @@
         <h2>Albert<span class="text-purple">Dev</span></h2>
         <p>© 2026 AlbertDev. All rights reserved.</p>
         <div class="social-icons">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
         </div>
     </div>
 </footer>
@@ -169,7 +190,7 @@
 
     backToTop.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
-        });
+    });
 </script>
 </body>
 </html>
